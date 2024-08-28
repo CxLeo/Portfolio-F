@@ -10,7 +10,7 @@
 
 @layer components {
   .layout {
-    @apply px-5 layout-sm:w-10/12 mx-auto ;
+    @apply px-5 layout-sm:w-[88.4%] mx-auto ;
   }
 }
 

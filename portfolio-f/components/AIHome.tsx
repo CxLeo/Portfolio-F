@@ -193,7 +193,7 @@ function AIHome() {
             </motion.div>
 
             {/* hero Section */}
-            <div className="w-full px-[20px] pt-[15vh] lg:pl-[48px] flex flex-col  h-screen pb-[50px] ">
+            <div className="w-full px-[5.81%] pt-[15vh] lg:pl-[48px] flex flex-col  h-screen pb-[50px] ">
                 <p className="flex-grow font-dmsans font-[450] leading-[40px] text-[40px] lg:text-[80px] lg:leading-[80px] home-4k:w-[80%] home-4k:leading-[90px] ">
                     I&apos;m Frank , a multi-disciplinary designer with 5 years of experience, driven by curiosity. Currently building products at  <span className="text-[#00C7A8]"><a href="https://www.dmsolving.com/">Dmsolving</a></span>, previously at <span className="text-[#00C7A8]"><a href="https://www.tencent.com/">Tencent</a></span>.
                 </p>
@@ -229,6 +229,14 @@ function AIHome() {
                         <div className="w-full transition-transform duration-200 transform hover:scale-[1.02] cursor-none"
                             onMouseEnter={projectEnter}
                             onMouseLeave={projectLeave}>
+                                <div className="w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
+                                    <a href="https://noqclinic.com" className="cursor-none absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
+                                        {`->`}
+                                    </a>
+                                </div>
+                                <div className="w-[56px] h-[31px] absolute lg:left-[28px] lg:top-[28px] left-[14px] top-[14px] bg-[#384C5D] rounded-2xl  flex items-center justify-center text-white font-dmsans font-medium leading-[14px] text-[14px]">
+                                    NEW
+                                </div>
                             <Image
                                 alt="NoQ AI Client"
                                 src="/images/ai-home/noq.png"
