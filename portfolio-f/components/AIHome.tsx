@@ -5,7 +5,6 @@ import ReactDOM from "react-dom";
 import { useState } from "react";
 import useMouse from "@react-hook/mouse-position";
 import { motion, easeIn, useTransform } from "framer-motion";
-import svg from "../public/images/ai-home/splash.svg"
 import { reverse } from "dns";
 
 
