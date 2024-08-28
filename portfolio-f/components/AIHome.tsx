@@ -8,6 +8,32 @@ import { motion, easeIn ,useTransform } from "framer-motion";
 
 function AIHome() {
     const heroData:string[] = ["4+ years of exp", "Product Design", "UX Strategy", "Motion"];
+    const projectsData=[
+        {
+            name:"Tecent Cloud",
+            slung:"Cloud computing service",
+            imgLong:"/images/ai-home/tencent.png",
+            imgSquare:"/images/ai-home/tencentSquare.png",
+        },
+        {
+            name:"Joox",
+            slung:"Music streaming player",
+            imgLong:"/images/ai-home/qq.png",
+            imgSquare:"/images/ai-home/qqSquare.png",
+        },
+        {
+            name:"Clash of The Claws",
+            slung:"VR game website",
+            imgLong:"/images/ai-home/claw.png",
+            imgSquare:"/images/ai-home/clawSquare.png",
+        },
+        {
+            name:"Atet Auto",
+            slung:"Electric car brand",
+            imgLong:"/images/ai-home/car.png",
+            imgSquare:"/images/ai-home/carSquare.png",
+        }
+    ]
     const [cursorText, setCursorText] = useState("");
     const [cursorVariant, setCursorVariant] = useState("default");
 
@@ -36,10 +62,6 @@ function AIHome() {
             backgroundColor: "transparent",
             x: mouseXPosition,
             y: mouseYPosition,
-            // transition: {
-            //     type: "spring",
-            //     mass: 0.6
-            // }
         },
         project: {
             opacity: 1,
@@ -50,7 +72,6 @@ function AIHome() {
             fontSize: "18px",
             x: mouseXPosition - 70,
             y: mouseYPosition - 70,
-           
         },
     };
     const cursor = {
@@ -73,7 +94,7 @@ function AIHome() {
             {/* circle cursor */}
             <motion.div
             variants={variants}
-            className="fixed z-50 flex flex-row items-center justify-center top-0 left-0 h-[10px] w-[10px] bg-[#00C7A8 bg-transparent rounded-full pointer-events-none text-white text-center text-[16px]"
+            className="lg:flex hidden fixed z-50 lg:flex-row items-center justify-center top-0 left-0 h-[10px] w-[10px] bg-transparent rounded-full pointer-events-none text-white text-center text-[16px]"
             animate={cursorVariant}
             transition={cursor}
             style={{cursor:"none"}}
@@ -99,7 +120,7 @@ function AIHome() {
                     <div className="my-[20px] w-full h-0 border-[1px] border-[#D9D9D9]"></div>
                     <div className="w-full flex font-dmsans font-normal text-[16px] leading-[16px]">
                         <p className=" text-[#898989] lg:flex-grow">Based in Toronto, Canada</p>
-                        <a href="#works" className="hidden lg:self-end lg:flex gap-x-1">
+                        <a href="#works" className="font-dmsans hidden lg:self-end lg:flex gap-x-1">
                         See Selected Works
                         <svg fill="#00C7A8" width="13px" height="17px" viewBox="0 0 16.25 16.25" ><path d="M9.376 9.393V1.625H6.809v7.768L2.876 5.85v3.998l5.216 4.713 5.216 -4.713V5.85z"/></svg>
                         </a>
@@ -111,13 +132,26 @@ function AIHome() {
             <div className="layout h-fit ">
                     {/* projects */}
                     <div id="works" className="w-full h-fit mt-[189px] lg:mt-[60px]">
-                        <h1 className="lg:block hidden font-dmsans font-normal text-[48px] leading-[48px] mb-[66px]">Signature Projects</h1>
+                        <div className="w-full lg:flex hidden font-dmsans font-normal text-[48px] leading-[48px] mb-[66px]">
+                        <h1 className=" flex-grow">Selected Works</h1>
+                        <h1 className=" self-end"> 21&apos;-24&apos;</h1>
+                        </div>
+                        
 
                         {/* main project: NoQ AI*/}
-                        <div className="w-full h-fit mb-[88px]">
-                            <div className="w-full transition-transform duration-200 transform hover:scale-[1.02] cursor-none"
+                        <div className="w-full h-fit lg:mb-[88px] mb-[52px]">
+                            <div className="w-full transition-transform duration-300 transform hover:scale-[1.02] cursor-none relative"
                                 onMouseEnter={projectEnter} 
                                 onMouseLeave={projectLeave}>
+                            <div className="w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
+                                <a href="https://noqclinic.com" className="font-bold text-[15px] cursor-none absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
+                                    {`->`}
+                                </a>
+                            </div>
+                            <div className="w-[56px] h-[31px] absolute lg:left-[28px] lg:top-[28px] left-[14px] top-[14px]  bg-[#384C5D] rounded-2xl  flex items-center justify-center text-white font-dmsans font-medium leading-[14px] text-[14px]">
+                                NEW
+                            </div>
+
                             <Image
                                 alt="NoQ AI Client"
                                 src="/images/ai-home/noq.png"
@@ -133,12 +167,46 @@ function AIHome() {
                                 className="w-full block lg:hidden"
                             />
                             </div>
-                            <h6 className="font-dmsans font-semibold text-[16px] leading-[16px] mt-[13px]">Noqclinic</h6>
-                            <p className="font-dmsans font-semibold text-[16px] text-[#898989] leading-[16px] mt-[5px]">Healthcare Appointment Platform</p>
+                            <h6 className="font-dmsans font-medium text-[16px] leading-[16px] mt-[13px]">Noqclinic</h6>
+                            <p className="font-san font-normal text-[16px] text-[#898989] leading-[16px] mt-[5px]">Healthcare Appointment Platform</p>
                         </div>
 
-                        <div className="bg-green-400">
-                            cd
+                        <div className="w-full flex flex-wrap gap-x-[50px] lg:gap-y-[88px] gap-y-[52px]">
+                            {
+                                projectsData.map((project,idx)=>(
+                                    <div key={idx} className="lg:w-[48.35%] w-full h-fit">
+                                        <div className="w-full transition-transform duration-300 transform hover:scale-[1.02] cursor-none relative"
+                                            onMouseEnter={projectEnter} 
+                                            onMouseLeave={projectLeave}>
+                                        <div className="w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
+                                            <a href="https://noqclinic.com" className="cursor-none absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
+                                                {`->`}
+                                            </a>
+                                        </div>
+                                        <div className="w-[85px] h-[31px] absolute lg:left-[28px] lg:top-[28px] left-[14px] top-[14px]  bg-[#00C7A8] rounded-2xl  flex items-center justify-center text-black font-dmsans font-medium leading-[14px] text-[14px]">
+                                            SHIPPED
+                                        </div>
+                                        
+                                        <Image
+                                            alt={project.name}
+                                            src={project.imgLong}
+                                            width={1459}
+                                            height={582}
+                                            className="w-full lg:block hidden"
+                                        />
+                                        <Image
+                                            alt={project.name}
+                                            src={project.imgSquare}
+                                            width={390}
+                                            height={370}
+                                            className="w-full block lg:hidden"
+                                        />
+                                        </div>
+                                        <h6 className="font-dmsans font-medium text-[16px] leading-[16px] mt-[13px]">{project.name}</h6>
+                                        <p className="font-san font-normal text-[16px] text-[#898989] leading-[16px] mt-[5px]">{project.slung}</p>
+                                    </div>
+                                ))
+                            }
                         </div>
                     </div>
                 </div>

@@ -30,7 +30,7 @@ const config: Config = {
       },
       fontFamily: {
         dmsans: ["DM Sans", 'sans'],
-        syne:["Syne","sans-serif"]
+        neue:['Neue', 'sans-serif']
       },
     },
     screens: {

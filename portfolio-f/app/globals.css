@@ -3,10 +3,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Neue";
+  src: url("../public/fonts/neue-haas-grotesk-display-pro-55-roman.ttf") format("ttf");
+}
+
 @layer components {
   .layout {
     @apply px-5 layout-sm:w-10/12 mx-auto ;
   }
+}
+
+@keyframes smooth-translate {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(1.25rem); /* Adjust this value based on translate-x-5 */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.ease-smooth-in-out {
+  animation: smooth-translate 0.5s ease-in-out;
 }
 
 html {
