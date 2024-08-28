@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .layout {
+    @apply px-5 layout-sm:w-10/12 mx-auto ;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.vidWrapper::after {
+  position: absolute;
+  bottom: -500;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  content: "";
+  background: linear-gradient(to bottom, rgba(255,0,0,0), black);
+  color: black;
+  z-index: 0;
+}
