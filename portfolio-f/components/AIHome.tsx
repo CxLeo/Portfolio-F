@@ -10,7 +10,32 @@ import { reverse } from "dns";
 
 
 function AIHome() {
-
+    const projectsData=[
+        {
+            name:"Tecent Cloud",
+            slung:"Cloud computing service",
+            imgLong:"/images/ai-home/tencent.png",
+            imgSquare:"/images/ai-home/tencentSquare.png",
+        },
+        {
+            name:"Joox",
+            slung:"Music streaming player",
+            imgLong:"/images/ai-home/qq.png",
+            imgSquare:"/images/ai-home/qqSquare.png",
+        },
+        {
+            name:"Clash of The Claws",
+            slung:"VR game website",
+            imgLong:"/images/ai-home/claw.png",
+            imgSquare:"/images/ai-home/clawSquare.png",
+        },
+        {
+            name:"Atet Auto",
+            slung:"Electric car brand",
+            imgLong:"/images/ai-home/car.png",
+            imgSquare:"/images/ai-home/carSquare.png",
+        }
+    ];
 
 
     const heroData: string[] = ["4+ years of exp", "Product Design", "UX Strategy", "Motion"];
@@ -160,7 +185,7 @@ function AIHome() {
             {/* circle cursor */}
             <motion.div
                 variants={variants}
-                className="fixed z-50 flex flex-row items-center justify-center top-0 left-0 h-[10px] w-[10px] bg-[#00C7A8 bg-transparent rounded-full pointer-events-none text-white text-center text-[16px]"
+                className="fixed z-50 flex flex-row items-center justify-center top-0 left-0 h-[10px] w-[10px] bg-transparent rounded-full pointer-events-none text-white text-center text-[16px]"
                 animate={cursorVariant}
                 transition={cursor}
                 style={{ cursor: "none" }}
@@ -224,9 +249,43 @@ function AIHome() {
                         <p className="font-dmsans font-semibold text-[16px] text-[#898989] leading-[16px] mt-[5px]">Healthcare Appointment Platform</p>
                     </div>
 
-                    <div className="bg-green-400">
-                        cd
-                    </div>
+                    <div className="w-full flex flex-wrap gap-x-[50px] lg:gap-y-[88px] gap-y-[52px]">
+                            {
+                                projectsData.map((project,idx)=>(
+                                    <div key={idx} className="lg:w-[48.35%] w-full h-fit">
+                                        <div className="w-full transition-transform duration-300 transform hover:scale-[1.02] cursor-none relative"
+                                            onMouseEnter={projectEnter} 
+                                            onMouseLeave={projectLeave}>
+                                        <div className="w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
+                                            <a href="https://noqclinic.com" className="cursor-none absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
+                                                {`->`}
+                                            </a>
+                                        </div>
+                                        <div className="w-[85px] h-[31px] absolute lg:left-[28px] lg:top-[28px] left-[14px] top-[14px]  bg-[#00C7A8] rounded-2xl  flex items-center justify-center text-black font-dmsans font-medium leading-[14px] text-[14px]">
+                                            SHIPPED
+                                        </div>
+                                        
+                                        <Image
+                                            alt={project.name}
+                                            src={project.imgLong}
+                                            width={1459}
+                                            height={582}
+                                            className="w-full lg:block hidden"
+                                        />
+                                        <Image
+                                            alt={project.name}
+                                            src={project.imgSquare}
+                                            width={390}
+                                            height={370}
+                                            className="w-full block lg:hidden"
+                                        />
+                                        </div>
+                                        <h6 className="font-dmsans font-medium text-[16px] leading-[16px] mt-[13px]">{project.name}</h6>
+                                        <p className="font-san font-normal text-[16px] text-[#898989] leading-[16px] mt-[5px]">{project.slung}</p>
+                                    </div>
+                                ))
+                            }
+                        </div>
                 </div>
             </div>
         </div >
