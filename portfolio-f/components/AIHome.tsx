@@ -78,6 +78,8 @@ function AIHome() {
     }
 
     const ref = React.useRef(null);
+
+
     const mouse = useMouse(ref, {
         enterDelay: 0,
         leaveDelay: 0
@@ -134,87 +136,11 @@ function AIHome() {
         setCursorVariant("default");
     }
 
+
+
     return (
         <section ref={ref}>
-            <div className="w-full h-screen flex justify-center items-center bg-black" id="splash-screen">
-                <motion.svg
-                    width="100"
-                    height="100"
-                    viewBox="0 0 41 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    {/* Define Mask for Fill Animation */}
-                    <defs>
-                        <mask id="mask1">
-                            <motion.rect
-                                x="0"
-                                y="0"
-                                
-                                width="100%"
-                                height="100%"
-                                fill="#878787"
-                                animate={{ width: ['0%', '100%'] }}
-                                transition={{
-                                    duration: 0.9,
-                                    ease: "easeOut",
-                                }}
-                            />
-                        </mask>
-
-
-                        <mask id="mask2">
-                            <motion.rect
-                                x="0"
-                                y="0"
-                                width="100%"
-                                height="100%"
-                                fill="yellow"
-                                animate={{ width: ['0%', '100%'] }}
-                                transition={{
-                                    duration: 0.9,
-                                    ease: "easeInOut",
-                                }}
-                            />
-                        </mask>
-
-
-                        {/* Define Gradient Fill */}
-                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="1000%" stopColor="#878787" />
-                            <stop offset="300%" stopColor="#878787" />
-                        </linearGradient>
-                    </defs>
-
-                    {/* Path with Mask and Gradient Fill */}
-                    <motion.path
-                        initial={{ pathLength: 1, }}
-                        animate={{ pathLength: 1,opacity:0.8 }}
-                        transition={{
-                            duration: 2,
-                            ease: "easeInOut",
-                        }}
-                        stroke="yellow"
-                        strokeWidth={0}
-                        d="M31 20H0V0H10.1639L31 20Z"
-                        fill="#878787"
-                        mask="url(#mask1)"
-                    />
-
-                    <motion.path
-                        initial={{ pathLength: 0, }}
-                        animate={{ pathLength: 1, }}
-                        transition={{
-                            duration: 0.5,
-                            //   duration: 1,
-                            ease: "easeInOut",
-                            repeatDelay: 1.3
-                        }}
-                        fill="white"
-                        mask="url(#mask2)"
-                        d="M11 20L31.1639 0H41V20H11Z" />
-
-                </motion.svg>
-            </div>
+           
 
             {/* circle cursor */}
             <motion.div
@@ -428,3 +354,4 @@ function AIHome() {
 }
 
 export default AIHome
+
