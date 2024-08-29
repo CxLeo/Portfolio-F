@@ -9,7 +9,7 @@ const SplashAnimation = () => {
 
 
     return (
-
+        // Parent Div Black Screen Animation
         <motion.div
             initial={{ opacity: 1, y: 0 }} // Start with full screen height
             animate={{ opacity: 0, y: '-100vh' }} // Keep opacity constant while visible
