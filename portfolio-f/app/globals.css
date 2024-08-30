@@ -12,6 +12,9 @@
   .layout {
     @apply  w-[88.4%] lg:w-[80%] mx-auto ;
   }
+  .layout-2{
+    @apply sm:w-[80%] mx-auto
+  }
 }
 
 @keyframes smooth-translate {

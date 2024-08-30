@@ -48,6 +48,7 @@ const config: Config = {
       'xl': '1280px',
       '2xl': '1536px',
       'blur-r-hide':'1310px',
+      '1130':'1130px'
       
     },
     
