@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import ReactDOM from "react-dom";
 import { useState } from "react";
 import useMouse from "@react-hook/mouse-position";
-import { motion, easeIn, useTransform, useScroll, stagger } from "framer-motion";
+import { motion } from "framer-motion";
 
 function AIHome() {
 
@@ -259,7 +259,7 @@ function AIHome() {
                 </div>
                 
                 {/* About Section */}
-                <div className="mt-[300px] w-full flex flex-wrap  h-fit lg:relative">
+                <div id="about" className="mt-[300px] w-full flex flex-wrap  h-fit lg:relative">
                     <div className="w-full lg:w-[50%] h-fit  lg:sticky lg:top-[28px]">
                         <div className="mb-[20px] w-[90%]  h-0 border-[1px] border-[#D9D9D9]"/>
                         <h1 className="font-dmsans text-[48px] leading-[48px] lg:text-[64px] lg:leading-[64px] font-medium lg:ml-[70px]">About</h1>
