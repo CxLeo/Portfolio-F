@@ -14,7 +14,7 @@ export default function Home() {
   }, [loading])
 
   return <>
-    <section className="relative h-[2000px]">
+    <section className="relative h-[2000px] ">
       <AnimatePresence>
 
         {loading && <SplashAnimation />}
