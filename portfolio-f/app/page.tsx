@@ -3,6 +3,7 @@ import AIHome from "@/components/AIHome";
 import SplashAnimation from "@/components/SplashAnimation";
 import { useEffect, useState } from "react";
 import { AnimatePresence } from 'framer-motion'
+import Footer from "@/components/Footer";
 
 export default function Home() {
 
@@ -14,13 +15,13 @@ export default function Home() {
   }, [loading])
 
   return <>
-    <section className="relative h-[2000px] ">
+    <section className="relative   z-10">
       <AnimatePresence>
-
         {loading && <SplashAnimation />}
         <AIHome />
+        
       </AnimatePresence>
-
+   
     </section>
   </>
 }
