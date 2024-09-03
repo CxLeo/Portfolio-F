@@ -139,7 +139,7 @@ function AIHome() {
 
 
     return (
-        <section ref={ref}>
+        <section ref={ref} className="bg-white">
            
 
             {/* circle cursor */}
@@ -154,7 +154,7 @@ function AIHome() {
             </motion.div>
 
             {/* hero Section */}
-            <div className="w-full px-[5.81%] pt-[15vh] lg:pl-[48px] flex flex-col  h-screen pb-[50px] ">
+            <div className="w-full px-[2.81%] pt-[15vh] lg:pl-[48px] flex flex-col  h-screen pb-[50px] ">
                 <p className="flex-grow font-dmsans font-[450] leading-[40px] text-[40px] lg:text-[80px] lg:leading-[80px] home-4k:w-[80%] home-4k:leading-[90px] ">
                     I&apos;m Frank , a multi-disciplinary designer with 5 years of experience, driven by curiosity. Currently building products at  <span className="text-[#00C7A8]"><a href="https://www.dmsolving.com/">Dmsolving</a></span>, previously at <span className="text-[#00C7A8]"><a href="https://www.tencent.com/">Tencent</a></span>.
                 </p>

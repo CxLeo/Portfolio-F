@@ -14,7 +14,7 @@ function FooterItem({label,url}:{label:string,url:string}) {
             onHoverEnd={()=>setHovered(false)} 
             initial={{x:0}} 
             whileHover={{x:7}} 
-            transition={{type:"tween",duration:"0.2"}} 
+            transition={{type:"tween",duration:"0.25"}} 
             className='w-full'>
             <a href={url} className='text-[16px] leading-[16px]'>
                 {label}
