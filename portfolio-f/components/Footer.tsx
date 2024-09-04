@@ -23,7 +23,7 @@ function Footer() {
     ]
 
   return (
-    <section className='w-full bg-[#EEEEEE] h-fit fixed z-[1] bottom-0'>
+    <section className='w-full bg-[#EEEEEE] h-fit '>
         <div className='layout pt-[55px] lg:pt-[120px]'>
             <div className='w-full flex flex-wrap gap-y-[26px] gap-x-[43.7%]'>
                 <Image src="/images/ai-home/logo.png" alt="Frank Zhang Design - Logo" width={41} height={20} className='w-[41px] h-[20px] lg:ml-20 hover:-translate-y-[6px] transition-transform duration-200 transform '/>
