@@ -23,7 +23,7 @@ const variants = {
 const navs = [
   {
       label:"Home",
-      url:"#"
+      url:"/"
   },
   {
       label:"Work",
@@ -43,6 +43,7 @@ export const MenuItem = ({ i,toggle }:{i:number,toggle:any}) => {
   return (
     <motion.li
       variants={variants}
+      className="li-nav"
     >
       <div className='w-[300px]' onClick={toggle}>
           <NavItem label={navs[i]?.label} url={navs[i]?.url}/>
