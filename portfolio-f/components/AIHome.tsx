@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 import { useState } from "react";
 import useMouse from "@react-hook/mouse-position";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 function AIHome() {
 
@@ -44,7 +45,7 @@ function AIHome() {
         },
         {
             company:"Dmsolving",
-            title:"Senior UI/UX Designer",
+            title:"UI/UX Designer",
             date:"2023",
             detail:"Created design concepts and brand identity for Claclaws. Collaborated with the team to implement UX solutions, boosting user engagement."
         },
@@ -139,7 +140,7 @@ function AIHome() {
 
 
     return (
-        <section ref={ref} className="bg-white">
+        <section ref={ref} className="">
            
             {/* circle cursor */}
             <motion.div
@@ -185,18 +186,19 @@ function AIHome() {
                     <h1 className="lg:block hidden font-dmsans font-normal text-[48px] leading-[48px] mb-[66px]">Signature Projects</h1>
 
                     {/* main project: NoQ AI*/}
-                    <div className="w-full h-fit mb-[88px]">
-                        <div className="w-full transition-transform duration-200 transform hover:scale-[1.02] cursor-none"
+                    <div className="w-full h-fit mb-[88px]" >
+                        <div  className="w-full transition-transform duration-200 transform hover:scale-[1.02] cursor-none"
                             onMouseEnter={projectEnter}
                             onMouseLeave={projectLeave}>
                                 <div className="w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
-                                    <a href="https://noqclinic.com" className="cursor-none absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
+                                    <a href="/noqclinic"  className="cursor-none absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
                                         {`->`}
                                     </a>
                                 </div>
                                 <div className="w-[56px] h-[31px] absolute lg:left-[28px] lg:top-[28px] left-[14px] top-[14px] bg-[#384C5D] rounded-2xl  flex items-center justify-center text-white font-dmsans font-medium leading-[14px] text-[14px]">
                                     NEW
                                 </div>
+                            
                             <Image
                                 alt="NoQ AI Client"
                                 src="/images/ai-home/noq.png"
@@ -211,6 +213,7 @@ function AIHome() {
                                 height={370}
                                 className="w-full block lg:hidden"
                             />
+                    
                         </div>
                         <h6 className="font-dmsans font-semibold text-[16px] leading-[16px] mt-[13px]">Noqclinic</h6>
                         <p className="font-dmsans font-semibold text-[16px] text-[#898989] leading-[16px] mt-[5px]">Healthcare Appointment Platform</p>
@@ -307,7 +310,7 @@ function AIHome() {
                                             <motion.div initial={{height:0}}
                                         animate={{height:"100%"}}
                                         transition={{ type: 'tween', duration: 0.15, delay: 0.1}}
-                                        className="w-full h-full bg-white overflow-hidden absolute">
+                                        className="w-full h-full  overflow-hidden absolute">
                                                <p className="font-dmsans font-normal leading-[16px]">{experience.date}</p> 
                                                <p className="mt-[15px] font-normal leading-[23px]">{experience.detail}</p>
                                             </motion.div>
