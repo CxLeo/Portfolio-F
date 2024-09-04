@@ -73,7 +73,7 @@ const NavBar = () => {
     <motion.nav
       initial={false}
       animate={isOpen ? "open" : "closed"}
-      className={` w-screen ah-${isOpen?"screen":"[80px]"} sticky top-0 z-[20] flex flex-col overflow-hidden `}
+      className={` w-full ah-${isOpen?"screen":"[80px]"} sticky top-0 z-[15] flex flex-col overflow-hidden `}
       variants={navbar}
     > 
     <div className="w-full flex-grow">

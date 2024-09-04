@@ -15,7 +15,7 @@ export default function Home() {
   }, [loading])
 
   return <>
-    <section className="relative   z-10">
+    <section className="relative   z-1">
       <AnimatePresence>
         {loading && <SplashAnimation />}
         <AIHome />
