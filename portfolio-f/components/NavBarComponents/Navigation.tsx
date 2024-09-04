@@ -12,12 +12,13 @@ const variants = {
   },
 };
 
-export const Navigation = () => (
-  <motion.ul variants={variants} className="bg-green-300 absolute w-full">
+export const Navigation = ({ toggle }:{toggle:any}) => (
+  <motion.ul variants={variants} className="absolut w-full lg:left-[50%] left-[5%]" >
     {itemIds.map((i) => (
-      <MenuItem i={i} key={i} />
+      <MenuItem i={i} key={i} toggle={toggle}/>
     ))}
+
   </motion.ul>
 );
 
-const itemIds = [0, 1, 2, 3, 4];
+const itemIds = [0, 1, 2, 3];

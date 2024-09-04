@@ -5,16 +5,16 @@ import { motion } from "framer-motion";
 const Path = (props:any) => (
   <motion.path
     fill="transparent"
-    strokeWidth="3"
+    strokeWidth="2"
     stroke="hsl(0, 0%, 18%)"
-    strokeLinecap="square"
+    strokeLinecap="round"
     {...props}
   />
 );
 
 export const MenuToggle = ({ toggle }:{toggle:any}) => (
-  <button onClick={toggle} className="bg-purple-600 ">
-    <svg width="30" height="25" viewBox="0 0 25 20">
+  <button onClick={toggle} className={``}>
+    <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
         variants={{
           closed: { d: "M 2 2.5 L 20 2.5" },

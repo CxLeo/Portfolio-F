@@ -19,9 +19,7 @@ export default function Home() {
       <AnimatePresence>
         {loading && <SplashAnimation />}
         <AIHome />
-        
       </AnimatePresence>
-   
     </section>
   </>
 }

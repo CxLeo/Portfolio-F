@@ -1,17 +1,18 @@
 'use client'
 import * as React from "react";
 import { motion } from "framer-motion";
+import NavItem from "../NavItem";
 
 const variants = {
   open: {
-    y: 0,
+    x: 0,
     opacity: 1,
     transition: {
       y: { stiffness: 1000, velocity: -100 }
     }
   },
   closed: {
-    y: 50,
+    x: 50,
     opacity: 0,
     transition: {
       y: { stiffness: 1000 }
@@ -19,18 +20,33 @@ const variants = {
   }
 };
 
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
+const navs = [
+  {
+      label:"Home",
+      url:"#"
+  },
+  {
+      label:"Work",
+      url:"#works"
+  },
+  {
+      label:"About",
+      url:"#about"
+  },
+  {
+      label:"Contact",
+      url:"mailto:franketns@gmail.com"
+  }
+]
 
-export const MenuItem = ({ i }:{i:number}) => {
-  const style = { border: `2px solid ${colors[i]}` };
+export const MenuItem = ({ i,toggle }:{i:number,toggle:any}) => {
   return (
     <motion.li
       variants={variants}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
     >
-      <div className="icon-placeholder" style={style} />
-      <div className="text-placeholder" style={style} />
+      <div className='w-[300px]' onClick={toggle}>
+          <NavItem label={navs[i]?.label} url={navs[i]?.url}/>
+      </div>
     </motion.li>
   );
 };
