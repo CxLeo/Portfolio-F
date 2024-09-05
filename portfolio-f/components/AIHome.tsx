@@ -323,7 +323,7 @@ function AIHome() {
                         }
                         
                         {/* download cv section */}
-                        <motion.a className="rounded-full mt-[40px] mb-[170px] pt-[17px] pl-[20px] w-[198px] h-[59px] bg-[#00C7A8] hover:bg-[#05E3C0] hover:shadow-[0_0_20px_5px_#00E7C34D] flex gap-x-[8px]">
+                        <motion.a download="FrankZhangCV.pdf" href="/files/frank-resume.pdf"  className="rounded-full mt-[40px] mb-[170px] pt-[17px] pl-[20px] w-[198px] h-[59px] bg-[#00C7A8] hover:bg-[#05E3C0] hover:shadow-[0_0_20px_5px_#00E7C34D] flex gap-x-[8px]">
                         <svg width="12" height="14" viewBox="0 0 12 14" fill="none" className="mt-[5px]">
                             <rect y="13" width="12" height="1" fill="black"/>
                             <path d="M3.5 5V0H8.5V5H12L6 11L0 5H3.5Z" fill="black"/>

@@ -45,7 +45,7 @@ export const MenuItem = ({ i,toggle }:{i:number,toggle:any}) => {
       variants={variants}
       className="li-nav"
     >
-      <div className='w-[300px]' onClick={toggle}>
+      <div className='w-[300px] my-1' onClick={toggle}>
           <NavItem label={navs[i]?.label} url={navs[i]?.url}/>
       </div>
     </motion.li>
