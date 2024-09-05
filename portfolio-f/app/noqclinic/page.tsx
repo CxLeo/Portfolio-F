@@ -9,6 +9,7 @@ import ProjectBriefComponent, {
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import ImageHeaderComponent from "@/components/globalcomponents/ImageHeaderComponent";
 
 const briefData: BriefProps = {
   summary:
@@ -63,15 +64,16 @@ function page() {
         subtext="Healthcare Appointment Platform"
         tag="new"
       />
+      <ImageHeaderComponent/>
       <ProjectBriefComponent data={briefData} />
       <IntroComponent data={introData} />
       {/* Context section */}
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: true}}
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
-        className=" layout-2  mb-[350px] mt-[280px]"
+        className=" layout-2  mb-[350px] mt-[280px] "
       >
         <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
         <div className='flex flex-col lg:flex-row gap-y-[40px]'>

@@ -16,10 +16,8 @@ export default function Home() {
 
   return <>
     <section className="relative   z-1">
-      <AnimatePresence>
-        {loading && <SplashAnimation />}
-        <AIHome />
-      </AnimatePresence>
+      {loading && <SplashAnimation />}
+      <AIHome />
     </section>
   </>
 }
