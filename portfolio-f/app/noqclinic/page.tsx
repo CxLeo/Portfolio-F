@@ -77,11 +77,11 @@ function page() {
         <div className='flex flex-col lg:flex-row gap-y-[40px]'>
           <div className='flex-1 '>
             <p className="font-medium text-[20px] leading-[25px] lg:text-[24px] lg:leading-[30px] font-dmsans">Context</p>
-            <p className="font-medium text-[20px] leading-[25px] lg:text-[24px] lg:leading-[30px] font-dmsans text-[#898989] w-[70%]">"Can We Make Healthcare Appointments Easier for Everyone?"</p>
+            <p className="font-medium text-[20px] leading-[25px] lg:text-[24px] lg:leading-[30px] font-dmsans text-[#898989] w-[70%]">&quot;Can We Make Healthcare Appointments Easier for Everyone?&quot;</p>
           </div>
           <div className='flex-1 '>
             <p className='text-[14px] leading-[21px] text-[#00C7A8] mb-[10px]'>Introduction</p>
-            <p className="text-[17px] font-[350] leading-[24px] text-[#898989] mt-[10px] mb-[20px]">The idea emerged from a common frustration in our daily life—always facing the complex and outdated system of healthcare appointments. We always see people waiting on hold for hours, only to find out the next available doctor's appointment is weeks away. This scenario plays out daily for countless patients, while doctors face their own challenges: overbooked schedules, administrative overload, and missed appointments.
+            <p className="text-[17px] font-[350] leading-[24px] text-[#898989] mt-[10px] mb-[20px]">The idea emerged from a common frustration in our daily life—always facing the complex and outdated system of healthcare appointments. We always see people waiting on hold for hours, only to find out the next available doctor&apos;s appointment is weeks away. This scenario plays out daily for countless patients, while doctors face their own challenges: overbooked schedules, administrative overload, and missed appointments.
               <br/><br/>
               Seeing this disconnect, we envisioned a solution: a platform that would transform healthcare booking by making it as simple as a few clicks...
             </p>
@@ -89,7 +89,7 @@ function page() {
             <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
             <p className='text-[14px] leading-[21px] text-[#00C7A8] mb-[10px]'>Project goal</p>
             <p className="font-dmsans font-medium text-[22px] leading-[28px] lg:text-[32px] lg:leading-[41px] mb-[62px]">
-              Build an AI-powered platform that doesn’t just manage appointments but transforms them. Our platform is designed to make appointment management seamless for both patients and providers, ensuring that every interaction is efficient, timely, and user-friendly.
+              Build an AI-powered platform that doesn&apos;t just manage appointments but transforms them. Our platform is designed to make appointment management seamless for both patients and providers, ensuring that every interaction is efficient, timely, and user-friendly.
             </p>
 
             <p className='text-[14px] leading-[21px] text-[#00C7A8] mb-[10px]'>Key metrics</p>
