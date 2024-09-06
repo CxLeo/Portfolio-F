@@ -15,24 +15,28 @@ function AIHome() {
             slung:"Cloud computing service",
             imgLong:"/images/ai-home/tencent.png",
             imgSquare:"/images/ai-home/tencentSquare.png",
+            url:"works/tencentcloud"
         },
         {
             name:"Joox",
             slung:"Music streaming player",
             imgLong:"/images/ai-home/qq.png",
             imgSquare:"/images/ai-home/qqSquare.png",
+            url:"works/joox"
         },
         {
             name:"Clash of The Claws",
             slung:"VR game website",
             imgLong:"/images/ai-home/claw.png",
             imgSquare:"/images/ai-home/clawSquare.png",
+            url:"works/clashofclaws"
         },
         {
             name:"Atet Auto",
             slung:"Electric car brand",
             imgLong:"/images/ai-home/car.png",
             imgSquare:"/images/ai-home/carSquare.png",
+            url:"works/atetauto"
         }
     ];
     const heroData: string[] = ["3+ years of exp", "Product Design", "UX Strategy", "Motion"];
@@ -188,11 +192,11 @@ function AIHome() {
                         <div  className="w-full transition-transform duration-200 transform hover:scale-[1.02] cursor-none"
                             onMouseEnter={projectEnter}
                             onMouseLeave={projectLeave}>
-                                <div className="w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
-                                    <a href="/noqclinic"  className="cursor-none absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
+                                <a  href="/works/noqclinic"  className="w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
+                                    <p className="cursor-none absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
                                         {`->`}
-                                    </a>
-                                </div>
+                                    </p>
+                                </a>
                                 <div className="w-[56px] h-[31px] absolute lg:left-[28px] lg:top-[28px] left-[14px] top-[14px] bg-[#384C5D] rounded-2xl  flex items-center justify-center text-white font-dmsans font-medium leading-[14px] text-[14px]">
                                     NEW
                                 </div>
@@ -224,11 +228,11 @@ function AIHome() {
                                         <div className="w-full transition-transform duration-300 transform hover:scale-[1.02] cursor-none relative"
                                             onMouseEnter={projectEnter} 
                                             onMouseLeave={projectLeave}>
-                                        <div className="w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
-                                            <a href="https://noqclinic.com" className="cursor-none absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
+                                        <a href={project.url} className="w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
+                                            <p  className="cursor-none absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
                                                 {`->`}
-                                            </a>
-                                        </div>
+                                            </p>
+                                        </a>
                                         <div className="w-[85px] h-[31px] absolute lg:left-[28px] lg:top-[28px] left-[14px] top-[14px]  bg-[#00C7A8] rounded-2xl  flex items-center justify-center text-black font-dmsans font-medium leading-[14px] text-[14px]">
                                             SHIPPED
                                         </div>
