@@ -10,7 +10,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import FiguresComponent, { figureProps } from "@/components/globalcomponents/FiguresComponent";
-
+import ImageHeaderComponent from "@/components/globalcomponents/ImageHeaderComponent";
 const briefData: BriefProps = {
   summary:
     "I was the design lead for Platform Noqclinic - a seamless AI-driven healthcare online booking platform.",
@@ -103,6 +103,7 @@ function page() {
         subtext="Healthcare Appointment Platform"
         tag="new"
       />
+      <ImageHeaderComponent image="/images/noq-banner.jpg" />
       <ProjectBriefComponent data={briefData} />
       <IntroComponent data={introData} />
       {/* Context section */}

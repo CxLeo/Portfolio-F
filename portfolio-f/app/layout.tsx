@@ -23,11 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} h-fit`}>
-        <NavBar/>
-        {children}
-        <Footer/>
+          <NavBar/>
+          {children}
+          <Footer />
       </body>
-      
+
     </html>
   );
 }
