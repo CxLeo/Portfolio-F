@@ -26,7 +26,7 @@ function Footer() {
     <section className='w-full bg-[#EEEEEE] h-fit '>
         <div className='layout pt-[55px] lg:pt-[120px]'>
             <div className='w-full flex flex-wrap gap-y-[26px] gap-x-[43.7%]'>
-                <Image src="/images/ai-home/logo.png" alt="Frank Zhang Design - Logo" width={41} height={20} className='w-[41px] h-[20px] lg:ml-20 hover:-translate-y-[6px] transition-transform duration-200 transform '/>
+                <Image src="/images/ai-home/logo.png" alt="Frank Zhang Design - Logo" width={35} height={50} className='w-[35px] h-[50px] lg:ml-20 hover:-translate-y-[6px] transition-transform duration-200 transform '/>
                 <div className='w-[400px] flex flex-col '>
                     <div className='flex flex-col'>
                         <h1 className='lg:text-[48px] lg:leading-[48px] text-[40px] leading-[40px]'>Let&apos;s talk</h1>
