@@ -22,7 +22,7 @@ function IntroComponent({data}:{data:IntroProps}) {
                 <p className='font-dmsans lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px]'>
                     What&apos;s {data.project}?
                 </p>
-                <p className='font-dmsans w-[70%] lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] text-[#898989] '>
+                <p className='font-dmsans lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] text-[#898989] '>
                     {data.title}
                 </p>
             </div>
