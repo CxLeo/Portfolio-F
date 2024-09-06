@@ -194,10 +194,10 @@ function page() {
         <div className="mt-[67px] flex flex-col lg:flex-row gap-x-[3%] gap-y-[40px]">
             <div className="lg:w-[23%] w-full">
               <p className="text-[16px] leading-[23px]">
-              Limited Use of Technology & Integration
+              Tailored Healthcare Solutions for Different User Needs
               </p>
               <p className="text-[16px] leading-[24px] text-[#898989]">
-              Current systems lack advanced technology integration. They fail to utilize AI to predict patient needs or optimize provider schedules, resulting in underutilized resources and patient dissatisfaction.
+              NoQClinic caters to three key healthcare users: Patients, Primary Providers, and Specialists. Each group has distinct needs, ranging from seamless appointment booking and record access for patients, to efficient care coordination for specialists. The platform offers tailored solutions for each user, ensuring an optimal and integrated healthcare experience across various levels of care.
               </p>
             </div>
             <Image width={972} height={548}  alt="design user flows" src="/images/noqclinic/user-flow.png" className="lg:w-[73.5%] w-full"/>
@@ -272,10 +272,6 @@ function page() {
           <a href="mailto:franketns@gmail.com" className="bg-[#00C7A8] py-[10px] px-[21px] rounded-[20px]"> GET IN TOUCH</a>
         </div>
       </motion.div>
-
-      
-      
-      
     </section>
   );
 }
