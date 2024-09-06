@@ -28,13 +28,13 @@ function ImageHeaderComponent({image,height}:imageprops) {
         target: targetParallax,
         offset: ["end start", "start start"]
     })
-    const customheight=height?height:'1000px'
+    const customheight=height?`md:h-[${height}]`:'md:h-[1000px]'
     console.log(customheight)
-    const y = useTransform(scrollYProgress, [1, 0], [0,250])
+    const y = useTransform(scrollYProgress, [1, 0], [0,350])
 
     return (
         < motion.div
-            className={`h-[50vh] md:h-[${customheight}]  overflow-y-clip`}>
+            className={`h-[50vh ${customheight} overflow-y-clip`}>
 
             <motion.div
                 style={{ y }}

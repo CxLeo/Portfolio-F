@@ -64,7 +64,7 @@ function page() {
         subtext="Healthcare Appointment Platform"
         tag="new"
       />
-      <ImageHeaderComponent image="/images/noq-banner.jpg" height="1000px"/>
+      <ImageHeaderComponent image="/images/noq-banner.jpg" />
       <ProjectBriefComponent data={briefData} />
       <IntroComponent data={introData} />
       {/* Context section */}

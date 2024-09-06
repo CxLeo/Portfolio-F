@@ -13,17 +13,17 @@ import ImageHeaderComponent from "@/components/globalcomponents/ImageHeaderCompo
 
 const briefData: BriefProps = {
   summary:
-    "I was the design lead for Platform Noqclinic - a seamless AI-driven healthcare online booking platform.",
-  product: "Noqclinic",
+    "I led the design of the Plush Up website, a dynamic and feature-rich platform that enhances user engagement and retention through a captivating, user-friendly interface.",
+  product: "Plush Up",
   skills: [
-    "Product design",
-    "Heuristic UX audit",
+    "Consistency",
+    " Visual Identity Development",
     "Interactive prototyping",
     "User research & testing",
   ],
   role: "Senior UI/UX Designer",
   timeline: "Q32023 - Now",
-  url: "https://noqclinic.com",
+  url: "https://plush-up.com",
 };
 
 const introData: IntroProps = {
@@ -60,11 +60,12 @@ function page() {
   return (
     <section>
       <PageHeadingComponent
-        text="Clash of Claws"
+        text="Plush Up"
         subtext="VR game Website"
         tag="new"
       />
-      {/* <ImageHeaderComponent image="/images/noq-banner.jpg"/> */}
+      <ImageHeaderComponent image="/images/Clashofclaws.png"/>
+      <ProjectBriefComponent data={briefData} />
    
    
       
