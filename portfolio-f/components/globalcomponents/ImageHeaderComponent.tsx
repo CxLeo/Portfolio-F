@@ -1,8 +1,7 @@
 'use client'
 import Image from 'next/image'
-import React from 'react'
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-import banner from "@/public/images/noq-banner.jpg"
+import React, { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 type imageprops = {
     image: string,
@@ -10,18 +9,44 @@ type imageprops = {
     customStyle?: string
 }
 
-function ImageHeaderComponent() {
+/**
+ * Image Animation Component
+ * 
+ * This component displays an image with an optional parallax effect.
+ * 
+ * @param {String} image - The source URL of the image (required).
+ * @param {String} [height] - Optional. The height for the parallax container. Defaults to a predefined height if not provided.
+ * @param {String} [customStyle] - Optional. Additional custom styles for the image container. Useful for testing or specific styling needs.
+ * 
+ * Example usage:
+ * <ImageHeaderComponent image="/path/to/image.jpg" height="500px" customStyle="border-radius: 10px" />
+ */
+
+function ImageHeaderComponent({image,height}:imageprops) {
+    const targetParallax = useRef<HTMLDivElement>(null)
+    const { scrollYProgress } = useScroll({
+        target: targetParallax,
+        offset: ["end start", "start start"]
+    })
+
+    const y = useTransform(scrollYProgress, [1, 0], [0,250])
+
     return (
-        < div className="bg-black h-[800px] wrapper1">
+        < motion.div
+            className={`h-[50vh] md:h-[${!height?'1000px':height}]  overflow-y-clip`}>
 
-            <div className='container'>
+            <motion.div
+                style={{ y }}
+                // style={{:scrollYProgress}}
+                ref={targetParallax}
+                className='   w-full h-full  '>
+                    <img className=' object-center object-cover md:object-cover  md:object-bottom w-full h-full' src={'/images/noq-banner.jpg'}/>
+                    {/* <img className='object-cover w-full h-full' src={'https://framerusercontent.com/images/EyzBztYZzL43QARvr8Hy7L2brY.png?scale-down-to=2048'}/> */}
+                    {/* <Image width={10000} height={10000} alt='image-1' className='object-cover w-full h-full' src={'/images/noq-banner.jpg'}/> */}
 
-                <div className='bg-red-400 h-[800px]   '>
-                    {/* <Image alt='1' width={10000} height={10000} className='background object-cover w-full h-full object-left-botto' src={'/images/noq-banner.jpg'} /> */}
-                </div>
+            </motion.div>
 
-            </div>
-        </div>
+        </motion.div>
     )
 }
 
