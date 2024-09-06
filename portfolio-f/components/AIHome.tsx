@@ -79,8 +79,6 @@ function AIHome() {
     }
 
     const ref = React.useRef(null);
-
-
     const mouse = useMouse(ref, {
         enterDelay: 0,
         leaveDelay: 0
@@ -350,10 +348,11 @@ function AIHome() {
                         </h5>
                     </div>
                 </div>
+
+
             </div>
         </section>
     )
 }
 
 export default AIHome
-
