@@ -332,13 +332,19 @@ function AIHome() {
                         </svg>
                         <p className="text-[22px] leading-[22px]">Download CV</p>
                         </motion.a>
-
-                        <Image alt="Frank Zhang - Designer" width={638} height={605} src="/images/ai-home/profile.png" className="w-full"/>
+                        <motion.div initial={{height:0}}
+                        whileInView={{height:"100%"}}
+                        viewport={{once:true}}
+                        transition={{ type: 'tween', duration: 3.15, delay: 0.1}}
+                        className="w-full h-full absolute overflow-hidden ">
+                            <Image alt="Frank Zhang - Designer" width={638} height={605} src="/images/ai-home/profile.png" className="w-[88%] lg:w-1/3"/>
+                        </motion.div>
+                            <Image alt="Frank Zhang - Designer" width={638} height={605} src="/images/ai-home/profile.png" className="w-full opacity-0"/>
                     </div>
                 </div>
 
                 {/* skill section */}
-                <div className="mt-[230px] w-full pb-[50px]">
+                <div className="mt-[230px] w-full pb-[150px]">
                     <div className="mb-[20px] w-full h-0 border-[1px] border-[#D9D9D9]"/>
                     <div className="flex w-full flex-col lg:flex-row mt-[18px] gap-y-[39px]">
                         <h4 className="lg:w-1/2 w-full lg:text-[22px] lg:leading-[22px] text-[18px] leading-[18px]">What I&apos;m known for</h4>

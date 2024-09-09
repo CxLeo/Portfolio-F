@@ -78,7 +78,9 @@ const NavBar = () => {
     > 
     <div className="w-full flex-grow">
       <div className="w-full flex ">
+          <a href="/" className="w-[35px] h-[50px] mt-[15px] ml-[2.7%]  hover:-translate-y-[2px] transition-transform duration-200 transform">
           <Image src="/images/ai-home/logo.png" alt="Frank Zhang Design - Logo" width={35} height={50} className='w-[35px] h-[50px] mt-[15px] ml-[2.7%]  hover:-translate-y-[2px] transition-transform duration-200 transform'/>
+          </a>
           <Image src="/images/navbar/sun.png" alt="Frank Zhang Design light mode" width={19} height={19} className='w-[19px] h-[19px] mt-[26px] lg:ml-[82.7%] ml-[60%]  hover:-translate-y-[2px] transition-transform duration-200 transform'/>
           <Image src="/images/navbar/moon.png" alt="Frank Zhang Design - dark mode" width={19} height={19} className='w-[19px] h-[19px] mt-[26px] ml-[2.7%]  hover:-translate-y-[2px] transition-transform duration-200 transform'/>
           
