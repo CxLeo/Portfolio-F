@@ -16,7 +16,7 @@ function ProjectBriefComponent({data}:{data:BriefProps}) {
         {/* Left Column */}
         <div className="flex-[0.9] ">
             <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-            <p className="w-full font-medium font-dmsans text-[22px] leading-[28px] lg:text-[32px] lg:leading-[41px]">{data.summary}</p>
+            <p className="w-full font-medium font-dmsans text-[22px] leading-[28px] lg:text-[32px] lg:leading-[41px] whitespace-pre-line">{data.summary}</p>
             <a href={data.url} className="bg-white hover:bg-[#D9D9D9] transition-colors duration-300 ease-in-out uppercase text-[15px] font-medium leading-[18px] px-3 py-2 border-[1px] border-[#CACACA] rounded-full hidden lg:flex  w-fit mt-[80px]">
                 {data.product}
                 <svg width="14" height="14" viewBox="0 0 27 26" fill="none" className='self-center ml-1'>

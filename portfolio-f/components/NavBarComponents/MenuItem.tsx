@@ -27,11 +27,11 @@ const navs = [
   },
   {
       label:"Work",
-      url:"#works"
+      url:"/#works"
   },
   {
       label:"About",
-      url:"#about"
+      url:"/#about"
   },
   {
       label:"Contact",

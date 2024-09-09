@@ -184,7 +184,7 @@ function AIHome() {
             {/* remaining part */}
             <div className="layout h-fit">
                 {/* projects */}
-                <div id="works" className="w-full h-fit mt-[189px] lg:mt-[60px]">
+                <div id="works" className="w-full h-fit mt-[189px] lg:mt-[60px] lg:py-[80px]">
                     <h1 className="lg:block hidden font-dmsans font-normal text-[48px] leading-[48px] mb-[66px]">Signature Projects</h1>
 
                     {/* main project: NoQ AI*/}
@@ -192,8 +192,8 @@ function AIHome() {
                         <div  className="w-full transition-transform duration-200 transform hover:scale-[1.02] cursor-none"
                             onMouseEnter={projectEnter}
                             onMouseLeave={projectLeave}>
-                                <a  href="/works/noqclinic"  className="w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
-                                    <p className="cursor-none absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
+                                <a  href="/works/noqclinic"  className="cursor-none w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
+                                    <p className=" absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
                                         {`->`}
                                     </p>
                                 </a>
@@ -217,8 +217,8 @@ function AIHome() {
                             />
                     
                         </div>
-                        <h6 className="font-dmsans font-semibold text-[16px] leading-[16px] mt-[13px]">Noqclinic</h6>
-                        <p className="font-dmsans font-semibold text-[16px] text-[#898989] leading-[16px] mt-[5px]">Healthcare Appointment Platform</p>
+                        <h6 className="font-dmsans font-medium text-[16px] leading-[16px] mt-[13px]">Noqclinic</h6>
+                        <p className="font-dmsans text-[16px] text-[#898989] leading-[16px] mt-[5px]">Healthcare Appointment Platform</p>
                     </div>
 
                     <div className="w-full flex flex-wrap gap-x-[3.3%] lg:gap-y-[88px] gap-y-[52px] ">
@@ -228,8 +228,8 @@ function AIHome() {
                                         <div className="w-full transition-transform duration-300 transform hover:scale-[1.02] cursor-none relative"
                                             onMouseEnter={projectEnter} 
                                             onMouseLeave={projectLeave}>
-                                        <a href={project.url} className="w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
-                                            <p  className="cursor-none absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
+                                        <a href={project.url} className="cursor-none w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
+                                            <p  className=" absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
                                                 {`->`}
                                             </p>
                                         </a>
@@ -264,11 +264,11 @@ function AIHome() {
                 
                 {/* About Section */}
                 <div id="about" className="mt-[300px] w-full flex flex-wrap  h-fit lg:relative">
-                    <div className="w-full lg:w-[50%] h-fit  lg:sticky lg:top-[28px]">
+                    <div className="w-full lg:w-[50%] h-fit  lg:sticky lg:top-[80px]">
                         <div className="mb-[20px] w-[90%]  h-0 border-[1px] border-[#D9D9D9]"/>
                         <h1 className="font-dmsans text-[48px] leading-[48px] lg:text-[64px] lg:leading-[64px] font-medium lg:ml-[70px]">About</h1>
                     </div>
-                    <div className="w-full lg:w-[50%] h-fit mt-[40px] lg:pr-[100px]  ">
+                    <div className="w-full lg:w-[50%] h-fit mt-[40px] lg:pr-[100px]  lg:pt-[40px] ">
                         <p className="text-[22px] leading-[26px] lg:text-[34px] lg:leading-[41.8px] font-normal font-dmsans">
                         I am a multi-disciplinary product designer with over 5 years of experience, currently based in Toronto. I am currently a Senior UI/UX Designer at <span className="text-[#00C7A8]">Dmsolving</span>, where I help clients across various industries such as education, retail, energy, AI technology, healthcare, and telecommunications to launch disruptive digital products and services and help grow clients&apos; own design teams.
                         <br/><br/>
