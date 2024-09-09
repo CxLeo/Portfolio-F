@@ -6,11 +6,12 @@ import PageHeadingComponent from "@/components/globalcomponents/PageHeadingCompo
 import ProjectBriefComponent, {
   BriefProps,
 } from "@/components/globalcomponents/ProjectBriefComponent";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import FiguresComponent, { figureProps } from "@/components/globalcomponents/FiguresComponent";
 import ImageHeaderComponent from "@/components/globalcomponents/ImageHeaderComponent";
+import useMouse from "@react-hook/mouse-position";
 const briefData: BriefProps = {
   summary:
     "I was the design lead for Platform Noqclinic - a seamless AI-driven healthcare online booking platform.",
@@ -34,9 +35,9 @@ const introData: IntroProps = {
     "A virtual healthcare platform combining AI with telemedicine for efficient at-home care. Patients use AI for assessments and book real doctors for comprehensive care, bridging the gap between patients and providers.",
   labels: [
     "Some numbers for this project",
-    "Web pages",
-    "Teams",
-    "Cloud services & tools",
+    "web pages",
+    "teams",
+    "cloud services & tools",
   ],
   figures: ["2300+", "50+", "80+"],
 };
@@ -95,9 +96,79 @@ const figureData:figureProps={
   arrows:[-1,1,-1]
 }
 
-function page() {
+function NoqClinicPage() {
+  const [cursorText, setCursorText] = useState("");
+  const [cursorVariant, setCursorVariant] = useState("default");
+  const ref = React.useRef(null);
+  const mouse = useMouse(ref, {
+      enterDelay: 0,
+      leaveDelay: 0
+  });
+  let mouseXPosition: any = 0;
+  let mouseYPosition: any = 0;
+
+  if (mouse.x !== null) {
+      mouseXPosition = mouse.clientX;
+  }
+
+  if (mouse.y !== null) {
+      mouseYPosition = mouse.clientY;
+  }
+
+  const variants = {
+      default: {
+          opacity: 0,
+          height: 0,
+          width: 0,
+          fontSize: "16px",
+          backgroundColor: "transparent",
+          x: mouseXPosition,
+          y: mouseYPosition,
+          // transition: {
+          //     type: "spring",
+          //     mass: 0.6
+          // }
+      },
+      project: {
+          opacity: 1,
+          backgroundColor: "#00C7A8",
+          color: "#000",
+          height: 140,
+          width: 140,
+          fontSize: "18px",
+          x: mouseXPosition - 70,
+          y: mouseYPosition - 70,
+
+      },
+  };
+  const cursor = {
+      type: "tween",
+      ease: "backOut"
+  };
+
+  function projectEnter(event: any) {
+      setCursorText("View");
+      setCursorVariant("project");
+  }
+
+  function projectLeave(event: any) {
+      setCursorText("");
+      setCursorVariant("default");
+  }
+
   return (
-    <section>
+    <section ref={ref}>
+      {/* circle cursor */}
+      <motion.div
+          variants={variants}
+          className="fixed z-50 hidden lg:flex flex-row items-center justify-center top-0 left-0 h-[10px] w-[10px] bg-transparent rounded-full pointer-events-none text-white text-center text-[16px]"
+          animate={cursorVariant}
+          transition={cursor}
+          style={{ cursor: "none" }}
+      >
+          <span className=" flex-1 text-inherit pointer-events-none m-auto">{cursorText}</span>
+      </motion.div>
+
       <PageHeadingComponent
         text="Noqclinic"
         subtext="Healthcare Appointment Platform"
@@ -272,8 +343,48 @@ function page() {
           <a href="mailto:franketns@gmail.com" className="bg-[#00C7A8] py-[10px] px-[21px] rounded-[20px]"> GET IN TOUCH</a>
         </div>
       </motion.div>
+
+
+      <motion.div initial={{y:50,opacity:0}} whileInView={{y:0,opacity:1}} viewport={{ once: true }} transition={{type: 'tween', duration: 0.3, ease: 'easeInOut'}}
+      className="layout-2 flex flex-col lg:flex-row mb-[43px] lg:mb-[230px]">
+          <h1 className="flex-1 font-dmsans font lg:text-[64px] lg:leading-[80px] text-[48px] leading-[60px] ">
+          Next project
+          </h1>
+          <div className="flex-1 mt-[28px]">
+          <div  className="w-full transition-transform duration-200 transform hover:scale-[1.02] cursor-none"
+              onMouseEnter={projectEnter}
+              onMouseLeave={projectLeave}>
+                  <a  href="/works/tencentcloud"  className="cursor-none w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
+                      <p className=" absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
+                          {`->`}
+                      </p>
+                  </a>
+                  <div className="w-[85px] h-[31px] absolute lg:left-[28px] lg:top-[28px] left-[14px] top-[14px]  bg-[#00C7A8] rounded-2xl  flex items-center justify-center text-black font-dmsans font-medium leading-[14px] text-[14px]">
+                      SHIPPED
+                  </div>
+              
+              <Image
+                  alt="Tencent Cloud"
+                  src="/images/noqclinic/tencent.png"
+                  width={653}
+                  height={373}
+                  className="w-full lg:block hidden"
+              />
+              <Image
+                  alt="Tencent Cloud"
+                  src="/images/noqclinic/tencentMobile.png"
+                  width={390}
+                  height={370}
+                  className="w-full block lg:hidden"
+              />
+      
+            </div>
+            <h6 className="font-dmsans font-medium text-[16px] leading-[16px] mt-[13px]">Tencent Cloud</h6>
+            <p className="font-dmsans text-[16px] text-[#898989] leading-[16px] mt-[5px]">Cloud computing service</p> 
+          </div>        
+      </motion.div>
     </section>
   );
 }
 
-export default page;
+export default NoqClinicPage;
