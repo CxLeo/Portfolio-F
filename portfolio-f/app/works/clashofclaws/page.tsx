@@ -7,9 +7,11 @@ import PageHeadingComponent from "@/components/globalcomponents/PageHeadingCompo
 import ProjectBriefComponent, {
   BriefProps,
 } from "@/components/globalcomponents/ProjectBriefComponent";
-import React from "react";
+import React, { useState } from "react";
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import useMouse from "@react-hook/mouse-position";
+import BackButton from "@/components/BackButton";
 
 const briefData: BriefProps = {
   summary:
@@ -56,9 +58,78 @@ const issuesData = [
   }
 ]
 
-function page() {
+function ClashofclawsPage() {
+  const [cursorText, setCursorText] = useState("");
+  const [cursorVariant, setCursorVariant] = useState("default");
+  const ref = React.useRef(null);
+  const mouse = useMouse(ref, {
+      enterDelay: 0,
+      leaveDelay: 0
+  });
+  let mouseXPosition: any = 0;
+  let mouseYPosition: any = 0;
+
+  if (mouse.x !== null) {
+      mouseXPosition = mouse.clientX;
+  }
+
+  if (mouse.y !== null) {
+      mouseYPosition = mouse.clientY;
+  }
+
+  const variants = {
+      default: {
+          opacity: 0,
+          height: 0,
+          width: 0,
+          fontSize: "16px",
+          backgroundColor: "transparent",
+          x: mouseXPosition,
+          y: mouseYPosition,
+          // transition: {
+          //     type: "spring",
+          //     mass: 0.6
+          // }
+      },
+      project: {
+          opacity: 1,
+          backgroundColor: "#00C7A8",
+          color: "#000",
+          height: 140,
+          width: 140,
+          fontSize: "18px",
+          x: mouseXPosition - 70,
+          y: mouseYPosition - 70,
+
+      },
+  };
+  const cursor = {
+      type: "tween",
+      ease: "backOut"
+  };
+
+  function projectEnter(event: any) {
+      setCursorText("View");
+      setCursorVariant("project");
+  }
+
+  function projectLeave(event: any) {
+      setCursorText("");
+      setCursorVariant("default");
+  }
   return (
-    <section>
+    <section ref={ref}>
+      {/* circle cursor */}
+      <motion.div
+          variants={variants}
+          className="fixed z-50 hidden lg:flex flex-row items-center justify-center top-0 left-0 h-[10px] w-[10px] bg-transparent rounded-full pointer-events-none text-white text-center text-[16px]"
+          animate={cursorVariant}
+          transition={cursor}
+          style={{ cursor: "none" }}
+      >
+          <span className=" flex-1 text-inherit pointer-events-none m-auto">{cursorText}</span>
+      </motion.div>
+      <BackButton/>
       <PageHeadingComponent
         text="Clash of Claws"
         subtext="VR game Website"
@@ -199,37 +270,46 @@ function page() {
 
       </motion.div>
 
-      <motion.div
-        initial={{ y: 50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
-        className=" layout-2  my-10"
-      >
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className=" flex flex-col lg:flex-row  gap-y-[40px] mt-5 pb-[100px]">
-          <h2 className="flex-1 lg:text-[48px]  text-[32px] leading-[40px] font-dmsans ">
-            Next Project
-          </h2>
-
-          <div className=" mb-[200px]  flex-1  " >
-            <Image src={'/images/carproject.png'} alt={'image-1'} width={1000} height={1000} className=" rounded-lg object-cover w-full h-full" />
-            <p className="mt-7 text-black text-[30px]">
-              Atet Auto
-            </p>
-            <p className="mt-2 text-[#898989] text-[19px]">
-              Electric car brand
-            </p>
-          </div>
-        </div>
-
+      {/* Next Project Section */}
+      <motion.div initial={{y:50,opacity:0}} whileInView={{y:0,opacity:1}} viewport={{ once: true }} transition={{type: 'tween', duration: 0.3, ease: 'easeInOut'}}
+      className="layout-2 flex flex-col lg:flex-row mb-[43px] lg:mb-[230px] mt-[200px]">
+          <h1 className="flex-1 font-dmsans font lg:text-[64px] lg:leading-[80px] text-[48px] leading-[60px] ">
+          Next project
+          </h1>
+          <div className="flex-1 mt-[28px]">
+          <div  className="w-full transition-transform duration-200 transform hover:scale-[1.02] cursor-none"
+              onMouseEnter={projectEnter}
+              onMouseLeave={projectLeave}>
+                  <a  href="/works/tencentcloud"  className="cursor-none w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
+                      <p className=" absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
+                          {`->`}
+                      </p>
+                  </a>
+                  <div className="w-[85px] h-[31px] absolute lg:left-[28px] lg:top-[28px] left-[14px] top-[14px]  bg-[#00C7A8] rounded-2xl  flex items-center justify-center text-black font-dmsans font-medium leading-[14px] text-[14px]">
+                      SHIPPED
+                  </div>
+              
+              <Image
+                  alt="Atet Auto"
+                  src="/images/atetNav.png"
+                  width={653}
+                  height={373}
+                  className="w-full lg:block hidden"
+              />
+              <Image
+                  alt="Noqclinic"
+                  src="/images/atetNavMobile.png"
+                  width={390}
+                  height={370}
+                  className="w-full block lg:hidden"
+              />
+            </div>
+            <h6 className="font-dmsans font-medium text-[16px] leading-[16px] mt-[13px]">Atet Auto</h6>
+            <p className="font-dmsans text-[16px] text-[#898989] leading-[16px] mt-[5px]">Electric car brand</p> 
+          </div>        
       </motion.div>
-
-
-
-
     </section>
   );
 }
 
-export default page;
+export default ClashofclawsPage;
