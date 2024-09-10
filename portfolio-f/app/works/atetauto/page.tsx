@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef } from 'react';
 import useMouse from "@react-hook/mouse-position";
+import BackButton from "@/components/BackButton";
 
 const briefData: BriefProps = {
   summary:
@@ -118,6 +119,7 @@ function AtetAutoPage() {
       >
           <span className=" flex-1 text-inherit pointer-events-none m-auto">{cursorText}</span>
       </motion.div>
+      <BackButton/>
       <PageHeadingComponent
         text="Atet Auto"
         subtext="Electric car brand"

@@ -13,6 +13,7 @@ import FiguresComponent, { figureProps } from "@/components/globalcomponents/Fig
 import ImageHeaderComponent from "@/components/globalcomponents/ImageHeaderComponent";
 import useMouse from "@react-hook/mouse-position";
 import NoqClinicSwiper, { Slider } from "@/components/NoqClinicSwiper";
+import BackButton from "@/components/BackButton";
 const briefData: BriefProps = {
   summary:
     "I was the design lead for Platform Noqclinic - a seamless AI-driven healthcare online booking platform.",
@@ -188,7 +189,7 @@ function NoqClinicPage() {
       >
           <span className=" flex-1 text-inherit pointer-events-none m-auto">{cursorText}</span>
       </motion.div>
-
+      <BackButton/>
       <PageHeadingComponent
         text="Noqclinic"
         subtext="Healthcare Appointment Platform"

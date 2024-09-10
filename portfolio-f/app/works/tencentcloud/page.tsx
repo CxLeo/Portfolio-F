@@ -7,6 +7,7 @@ import React, { useState } from 'react'
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import useMouse from '@react-hook/mouse-position';
+import BackButton from '@/components/BackButton';
 
 function TencentCloudPage
 () {
@@ -112,6 +113,7 @@ function TencentCloudPage
       >
           <span className=" flex-1 text-inherit pointer-events-none m-auto">{cursorText}</span>
       </motion.div>
+      <BackButton/>
     <PageHeadingComponent
       text="Tencent Cloud"
       subtext="Cloud computing service"
