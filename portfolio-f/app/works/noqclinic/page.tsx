@@ -148,10 +148,6 @@ function NoqClinicPage() {
           backgroundColor: "transparent",
           x: mouseXPosition,
           y: mouseYPosition,
-          // transition: {
-          //     type: "spring",
-          //     mass: 0.6
-          // }
       },
       project: {
           opacity: 1,
