@@ -7,12 +7,18 @@ export type BriefProps={
     skills:string[],
     role:string,
     timeline:string,
-    url:string
+    url:string,
+  
+
 }
 
-function ProjectBriefComponent({data}:{data:BriefProps}) {
+function ProjectBriefComponent({data,marginTop,marginBottom}:{data:BriefProps,marginTop?:String,marginBottom?:String}) {
+    const marginTop1=marginTop?marginTop:'mt-[48px]'
+    const marginBottom1=marginBottom?marginBottom:'mb-[218px] lg:mb-[353px]'
+
   return (
-    <motion.div initial={{y:50,opacity:0}} whileInView={{y:0,opacity:1}} viewport={{ once: true }} transition={{type: 'tween', duration: 0.3, ease: 'easeInOut'}} className="mt-[48px] layout-2 bg-red-30 flex flex-col lg:flex-row gap-x-[40px] gap-y-[40px] mb-[218px] lg:mb-[353px]">
+    <motion.div initial={{y:50,opacity:0}} whileInView={{y:0,opacity:1}} viewport={{ once: true }} transition={{type: 'tween', duration: 0.3, ease: 'easeInOut'}} 
+    className={`${marginTop1} ${marginBottom1} layout-2 bg-red-30 flex flex-col lg:flex-row gap-x-[40px] gap-y-[40px] `}>
         {/* Left Column */}
         <div className="flex-[0.9] ">
             <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
