@@ -12,6 +12,7 @@ import Image from "next/image";
 import FiguresComponent, { figureProps } from "@/components/globalcomponents/FiguresComponent";
 import ImageHeaderComponent from "@/components/globalcomponents/ImageHeaderComponent";
 import useMouse from "@react-hook/mouse-position";
+import NoqClinicSwiper, { Slider } from "@/components/NoqClinicSwiper";
 const briefData: BriefProps = {
   summary:
     "I was the design lead for Platform Noqclinic - a seamless AI-driven healthcare online booking platform.",
@@ -95,6 +96,29 @@ const figureData:figureProps={
   labels:["decrease in no-show rate","accuracy in AI pre-diagnosis","minutes reduce in appointment waiting"],
   arrows:[-1,1,-1]
 }
+
+const sliderData:Slider[]=[
+  {
+    title:"Tailored Healthcare Solutions for Different User Needs",
+    description:"NoQClinic caters to three key healthcare users: Patients, Primary Providers, and Specialists. Each group has distinct needs, ranging from seamless appointment booking and record access for patients, to efficient care coordination for specialists. The platform offers tailored solutions for each user, ensuring an optimal and integrated healthcare experience across various levels of care.",
+    img:"/images/noqclinic/user-flow.png"
+  },
+  {
+    title:"Pre-Booking: Scheduling & Confirmation",
+    description:"This section covers the steps where users input symptoms, receive AI-analyzed doctor recommendations, select a doctor, and schedule their appointment (online or in-person). AI handles timezone conversion, generates available time slots, and sends a confirmation along with preparation advice and reminders.",
+    img:"/images/noqclinic/user-flow1.png"
+  },
+  {
+    title:"Appointment Day: Check-In and Attendance",
+    description:"On the day of the appointment, users check-in for either an on-site or online consultation. AI assists with traffic and weather alerts for in-person visits and manages virtual or physical queues to streamline the process.",
+    img:"/images/noqclinic/user-flow2.png"
+  },
+  {
+    title:"Post-Booking: Follow-Up and Feedback",
+    description:"This section covers the steps where users input symptoms, receive AI-analyzed doctor recommendations, select a doctor, and schedule their appointment (online or in-person). AI handles timezone conversion, generates available time slots, and sends a confirmation along with preparation advice and reminders.",
+    img:"/images/noqclinic/user-flow3.png"
+  }
+]
 
 function NoqClinicPage() {
   const [cursorText, setCursorText] = useState("");
@@ -261,18 +285,8 @@ function NoqClinicPage() {
         className=" layout-2  mb-[325px]"
       >
         <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <p className="lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] font-dmsans">Process</p>
-        <div className="mt-[67px] flex flex-col lg:flex-row gap-x-[3%] gap-y-[40px]">
-            <div className="lg:w-[23%] w-full">
-              <p className="text-[16px] leading-[23px]">
-              Tailored Healthcare Solutions for Different User Needs
-              </p>
-              <p className="text-[16px] leading-[24px] text-[#898989]">
-              NoQClinic caters to three key healthcare users: Patients, Primary Providers, and Specialists. Each group has distinct needs, ranging from seamless appointment booking and record access for patients, to efficient care coordination for specialists. The platform offers tailored solutions for each user, ensuring an optimal and integrated healthcare experience across various levels of care.
-              </p>
-            </div>
-            <Image width={972} height={548}  alt="design user flows" src="/images/noqclinic/user-flow.png" className="lg:w-[73.5%] w-full"/>
-        </div>
+        <p className="lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] font-dmsans mb-[67px]">Process</p>
+        <NoqClinicSwiper data={sliderData}/>
       </motion.div>
       {/* demo section */}
       <motion.div
