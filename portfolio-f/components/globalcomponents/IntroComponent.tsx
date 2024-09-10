@@ -17,7 +17,7 @@ function IntroComponent({data}:{data:IntroProps}) {
   return (
     <motion.div initial={{y:50,opacity:0}} whileInView={{y:0,opacity:1}} viewport={{ once: true }} transition={{type: 'tween', duration: 0.3, ease: 'easeInOut'}} className=' layout-2'>
         <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className='flex flex-col lg:flex-row'>
+        <div className='flex flex-col lg:flex-row gap-y-[50px]'>
             <div className='flex-1'>
                 <p className='font-dmsans lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px]'>
                     What&apos;s {data.project}?

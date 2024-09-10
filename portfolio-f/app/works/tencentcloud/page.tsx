@@ -88,7 +88,7 @@ function TencentCloudPage
   const introData: IntroProps = {
     project: "Tencent Cloud",
     title: "A Cloud computing service ",
-    img: "/images/tencentcloud/introImage.png",
+    img: "/images/tencentcloud/introImage1.png",
     description:
       "An internal tool that serves as a one-stop shop and workspace for technologists to access cloud-based tooling in a secured environment to host their interactive client deliverables.",
     labels: [
