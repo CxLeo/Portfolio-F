@@ -4,8 +4,10 @@ import React, { useRef } from "react";
 import ReactDOM from "react-dom";
 import { useState } from "react";
 import useMouse from "@react-hook/mouse-position";
-import { motion } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import Link from "next/link";
+import Line from "./globalcomponents/Line";
+import HomeHeroSwiper from "./HomeHeroSwiper";
 
 function AIHome() {
 
@@ -60,6 +62,67 @@ function AIHome() {
             detail:"Worked on the UI design for high-profile projects such as Tencent Cloud and Joox. I focused on creating intuitive interfaces and user experiences during concept sprints, helping to enhance product value and inform key business decisions."
         }
     ]
+
+    const refProject = useRef(null);
+    const [noqScale,setNoqScale] = useState(1);
+    const { scrollYProgress } = useScroll({
+        target: refProject,
+        offset: ["start start", "end start"],
+    });
+    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+        // console.log("Page scroll: ", latest);
+        setNoqScale(1-latest/4);
+    });
+
+    const refFrank = useRef(null);
+    const [frankScale,setFrankScale] = useState(1);
+    const { scrollYProgress:scrollYProgressFrank } = useScroll({
+        target: refFrank,
+        offset: ["start end", "end end"],
+    });
+    useMotionValueEvent(scrollYProgressFrank, "change", (latest) => {
+        // console.log("Page scroll: ", latest);
+        setFrankScale(latest);
+    });
+
+    const refs:React.MutableRefObject<null>[]=[useRef(null),useRef(null),useRef(null),useRef(null)]
+    const [scales,setScales] = useState([1,1,1,1]);
+    const { scrollYProgress:scrollYProgressOne } = useScroll({
+        target: refs[0],
+        offset: ["start start", "end start"],
+    });
+    useMotionValueEvent(scrollYProgressOne, "change", (latest) => {
+        setScales(prev => {
+            return prev.map((number,i)=> i===0?1-latest/4:number);
+        });
+    });
+    const { scrollYProgress:scrollYProgressTwo } = useScroll({
+        target: refs[1],
+        offset: ["start start", "end start"],
+    });
+    useMotionValueEvent(scrollYProgressTwo, "change", (latest) => {
+        setScales(prev => {
+            return prev.map((number,i)=> i===1?1-latest/4:number);
+        });
+    });
+    const { scrollYProgress:scrollYProgressThree } = useScroll({
+        target: refs[2],
+        offset: ["start start", "end start"],
+    });
+    useMotionValueEvent(scrollYProgressThree, "change", (latest) => {
+        setScales(prev => {
+            return prev.map((number,i)=> i===2?1-latest/4:number);
+        });
+    });
+    const { scrollYProgress:scrollYProgressFour } = useScroll({
+        target: refs[3],
+        offset: ["start start", "end start"],
+    });
+    useMotionValueEvent(scrollYProgressFour, "change", (latest) => {
+        setScales(prev => {
+            return prev.map((number,i)=> i===3?1-latest/4:number);
+        });
+    });
 
     const [cursorText, setCursorText] = useState("");
     const [cursorVariant, setCursorVariant] = useState("default");
@@ -156,7 +219,38 @@ function AIHome() {
             </motion.div>
 
             {/* hero Section */}
-            <div className="w-full px-[2.81%] pt-[70px] lg:pl-[48px] flex flex-col  h-screen pb-[100px] ">
+            <div className="w-[90%] mx-auto bg-red-30  apt-[70px] lg:pl-[48px] flex flex-col  h-screen pb-[100px] ">
+                <div className="w-full mt-[80px">
+                    <Line/>
+                    <div className="flex w-full">
+                        <div className="flex flex-wrap gap-x-2 gap-y-2 mt-[20px]">
+                            {
+                                heroData.map((label, idx) => (
+                                    <div key={idx} 
+                                    className={`whitespace-nowrap border-[1px] ${idx>0?"md:block hidden":"block"} rounded-full border-[#D7D7D7] w-fit h-[32px] py-[9px] px-[13px] text-[14px] font-dmsans leading-[14px]`}>
+                                        {label}
+                                    </div>
+                                ))
+                            }
+                        </div>
+                        <div className="mt-[20px] flex ml-auto">
+                            <div className="w-2 h-2 mt-2 mr-2 bg-transparent rounded-full animate-breathe"></div>
+                            <p className="lg:text-[16px] text-[14px] text-[#898989] lg:flex-grow">Based in Toronto, Canada</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="flex-1 mt-[100px] font-dmsans font-[450] leading-[60px] text-[60px] xl:text-[120px] xl:leading-[128px] home-4k:w-[80%] home-4k:leading-[90px] ">
+                    I&apos;m Feiran, a product designer specialized in creating crisp and catchy
+                    <HomeHeroSwiper/>
+                </div>
+                
+                <div className=" flex ">
+                    <p className="lg:text-[20px] text-[13px] leading-[20px] w-[230px]">.see selected works</p>
+                    <Line/>
+                </div>
+         
+            </div>
+            {/* <div className="w-full px-[2.81%] pt-[70px] lg:pl-[48px] flex flex-col  h-screen pb-[100px] ">
                 <p className="flex-grow font-dmsans font-[450] leading-[40px] text-[40px] lg:text-[80px] lg:leading-[80px] home-4k:w-[80%] home-4k:leading-[90px] ">
                     I&apos;m Frank , a multi-disciplinary designer with 3 years of experience, driven by curiosity. Currently building products at  <span className="text-[#00C7A8]"><a href="https://www.dmsolving.com/">Dmsolving</a></span>, previously at <span className="text-[#00C7A8]"><a href="https://www.tencent.com/">Tencent</a></span>.
                 </p>
@@ -179,16 +273,19 @@ function AIHome() {
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* remaining part */}
             <div className="layout h-fit">
                 {/* projects */}
                 <div id="works" className="w-full h-fit mt-[189px] lg:mt-[60px] lg:py-[80px]">
-                    <h1 className="lg:block hidden font-dmsans font-normal text-[48px] leading-[48px] mb-[66px]">Signature Projects</h1>
+                    {/* <h1 className="lg:block hidden font-dmsans font-normal text-[48px] leading-[48px] mb-[66px]">Signature Projects</h1> */}
 
                     {/* main project: NoQ AI*/}
-                    <div className="w-full h-fit mb-[88px]" >
+                    <motion.div 
+                    ref={refProject}
+                    style={{ scale:noqScale,opacity:noqScale}}
+                    className="w-full h-fit mb-[88px] transition duration-500 transform ease-in-out" >
                         <div  className="w-full transition-transform duration-200 transform hover:scale-[1.02] cursor-none"
                             onMouseEnter={projectEnter}
                             onMouseLeave={projectLeave}>
@@ -215,16 +312,16 @@ function AIHome() {
                                 height={370}
                                 className="w-full block lg:hidden"
                             />
-                    
                         </div>
                         <h6 className="font-dmsans font-medium text-[16px] leading-[16px] mt-[13px]">Noqclinic</h6>
                         <p className="font-dmsans text-[16px] text-[#898989] leading-[16px] mt-[5px]">Healthcare Appointment Platform</p>
-                    </div>
+                    </motion.div>
 
                     <div className="w-full flex flex-wrap gap-x-[3.3%] lg:gap-y-[88px] gap-y-[52px] ">
                             {
                                 projectsData.map((project,idx)=>(
-                                    <div key={idx} className="lg:w-[48.35%] w-full h-fit">
+                                    <motion.div ref={refs[idx]}
+                                    style={{ scale:scales[idx],opacity:scales[idx]}} key={idx} className="lg:w-[48.35%] w-full h-fit transition duration-500 transform ease-in-out">
                                         <div className="w-full transition-transform duration-300 transform hover:scale-[1.02] cursor-none relative"
                                             onMouseEnter={projectEnter} 
                                             onMouseLeave={projectLeave}>
@@ -254,7 +351,7 @@ function AIHome() {
                                         </div>
                                         <h6 className="font-dmsans font-medium text-[16px] leading-[16px] mt-[13px]">{project.name}</h6>
                                         <p className="font-san font-normal text-[16px] text-[#898989] leading-[16px] mt-[5px]">{project.slung}</p>
-                                    </div>
+                                    </motion.div>
                                 ))
                             }
                         </div>
@@ -263,7 +360,7 @@ function AIHome() {
                 </div>
                 
                 {/* About Section */}
-                <div id="about" className="mt-[300px] w-full flex flex-wrap  h-fit lg:relative">
+                {/* <div id="about" className="mt-[300px] w-full flex flex-wrap  h-fit lg:relative">
                     <div className="w-full lg:w-[50%] h-fit  lg:sticky lg:top-[80px]">
                         <div className="mb-[20px] w-[90%]  h-0 border-[1px] border-[#D9D9D9]"/>
                         <h1 className="font-dmsans text-[48px] leading-[48px] lg:text-[64px] lg:leading-[64px] font-medium lg:ml-[70px]">About</h1>
@@ -324,7 +421,7 @@ function AIHome() {
                             ))
                         }
                         
-                        {/* download cv section */}
+                  
                         <motion.a download="FrankZhangCV.pdf" href="/files/frank-resume.pdf"  className="rounded-full mt-[40px] mb-[170px] pt-[17px] pl-[20px] w-[198px] h-[59px] bg-[#00C7A8] hover:bg-[#05E3C0] hover:shadow-[0_0_20px_5px_#00E7C34D] flex gap-x-[8px]">
                         <svg width="12" height="14" viewBox="0 0 12 14" fill="none" className="mt-[5px]">
                             <rect y="13" width="12" height="1" fill="black"/>
@@ -333,31 +430,69 @@ function AIHome() {
                         <p className="text-[22px] leading-[22px]">Download CV</p>
                         </motion.a>
                         <Image alt="Frank Zhang - Designer" width={638} height={605} src="/images/ai-home/profile.png" className="w-full"/>
-                        {/* <motion.div initial={{height:0}}
-                        whileInView={{height:"100%"}}
-                        viewport={{once:true}}
-                        transition={{ type: 'tween', duration: 3.15, delay: 0.1}}
-                        className="w-full h-full absolute overflow-x-hidden ">
-                            <Image alt="Frank Zhang - Designer" width={638} height={605} src="/images/ai-home/profile.png" className="w-[88%] lg:w-1/3"/>
-                        </motion.div>
-                            <Image alt="Frank Zhang - Designer" width={638} height={605} src="/images/ai-home/profile.png" className="w-full opacity-0"/> */}
                     </div>
+                </div> */}
+
+                <div className="mt-[170px] w-full ">
+                    <div className="flex flex-col lg:flex-row">
+                        <div ref={refFrank} style={{ scale:frankScale,opacity:frankScale}} className="flex-1 transition duration-500 transform ease-in-out">
+                            <Image  src="/images/ai-home/profileB.png" alt="profile" width={632} height={840} className="lg:w-[85%] w-full "/>
+                        </div>
+                    <div className="flex-1">
+                        <div className="lg:mt-[480px] mt-[40px] flex">
+                            <p className="text-[20px] leading-[20px] mr-2">.about</p>
+                            <Line/>
+                        </div>
+                        <p className="mt-[40px] font-dmsans font-[450] lg:text-[34px] lg:leading-[47px] text-[24px] leading-[36px]">
+                        I&apos;m a multi-disciplinary product designer with over 3 years of experience, currently based in Toronto,  Canada. I&apos;m passionate about design, with extensive experience across UI, UX, and Branding. My philosophy is simple: <span className="text-[#00C7A8]">&quot;The less it is, the cooler the interface.&quot;</span>
+                        </p>
+                    </div>
+                    </div>
+
+                    <div className="w-full lg:mt-[356px] mt-[220px]">
+                        <div className="lg:mt-[480px] mt-[40px] flex">
+                            <p className="text-[20px] leading-[20px] md:text-[20px] md:leading-[20px] w-[190px]">.work experience</p>
+                            <Line/>
+                        </div>
+                        {
+                            experienceData.map((experience,idx)=>(
+                                <div key={idx} className="lg:pt-[90px] pt-[60px]">
+                                    <div className="flex md:flex-row flex-col md:mb-[80px] mb-[50px] gap-y-[20px]">
+                                        <div className="flex-1 font-dmsans font-[450] text-[32px] leading-[32px] text-[#747474]">
+                                            {experience.date}
+                                        </div>
+                                        <div className="flex-1">
+                                            <h4 className="font-dmsans font-[450] text-[32px] leading-[32px]">{experience.company}</h4>
+                                            <p className="text-[16px] leading-[16px] text-[#747474] md:mt-[22px] mt-[10px]">{experience.title}</p>
+                                        </div>
+                                        <div className="flex-[0.77] font-dmsans text-[16px] leading-[23px] text-[#747474]">
+                                            {experience.detail}
+                                        </div>
+                                    </div>
+                                    <Line/>
+                                </div>
+                            ))
+                        }
+                    </div>
+
+                    
                 </div>
 
                 {/* skill section */}
-                <div className="mt-[230px] w-full pb-[150px]">
-                    <div className="mb-[20px] w-full h-0 border-[1px] border-[#D9D9D9]"/>
-                    <div className="flex w-full flex-col lg:flex-row mt-[18px] gap-y-[39px]">
-                        <h4 className="lg:w-1/2 w-full lg:text-[22px] lg:leading-[22px] text-[18px] leading-[18px]">What I&apos;m known for</h4>
-                        <h5 className="text-[42px] leading-[42px] lg:text-[68px] lg:leading-[68px] lg:w-1/2 w-full font-[430]">
-                        User Experience Design <br/><br/>
-                        User Interface Research<br/><br/>
-                        High Fidelity Prototyping<br/><br/>
-                        User Research<br/><br/>
-                        Product Design<br/><br/>
-                        Motion Design<br/><br/>
-                        </h5>
+                <div className="mt-[350px] w-full pb-[150px] ">
+                    <div className="lg:mt-[480px] mt-[20px] flex">
+                        <p className="text-[20px] leading-[20px] w-[220px]">.what I&apos;m known for</p>
+                        <Line/>
                     </div>
+            
+                    <h5 className="text-[42px] leading-[42px] lg:text-[68px] lg:leading-[68px] lg:w-1/2 w-full font-[430] lg:ml-[50%] mt-[40px] lg:mt-[16px]">
+                    User Experience Design <br/><br/>
+                    User Interface Research<br/><br/>
+                    High Fidelity Prototyping<br/><br/>
+                    User Research<br/><br/>
+                    Product Design<br/><br/>
+                    Motion Design<br/><br/>
+                    </h5>         
                 </div>
 
 
