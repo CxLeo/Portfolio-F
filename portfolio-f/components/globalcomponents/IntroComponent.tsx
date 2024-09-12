@@ -8,6 +8,7 @@ export type IntroProps={
     project:string,
     title:string,
     img:string,
+    video?:string,
     description:string,
     labels?:string[],
     figures?:string[]
@@ -27,7 +28,16 @@ function IntroComponent({data}:{data:IntroProps}) {
                 </p>
             </div>
             <div className=' flex-1 '>
-                <Image src={data.img} width={636} height={636} alt={data.project} className='w-full'/>
+                {
+                    !data.video && <Image src={data.img} width={636} height={636} alt={data.project} className='w-full'/>
+                }
+                {
+                    data.video && (<video width={636} height={636} loop preload="auto" playsInline autoPlay className="rounded-full w-full">
+                    <source src={data.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                    </video>)
+                } 
+                
                 <p className='text-[17px] font-[350] leading-[24px] text-[#898989] mt-[63px]'>
                     {data.description}
                 </p>
