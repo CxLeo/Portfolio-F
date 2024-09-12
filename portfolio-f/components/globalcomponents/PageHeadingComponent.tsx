@@ -9,7 +9,7 @@ type props = {
 function PageHeadingComponent({ text, subtext, tag }: props) {
   return (
     <>
-      <div className='mt-[200px] mb-[20px] layout-2 flex 1130:items-center bg-purple-20 1130:flex-row flex-col gap-y-3' >
+      <div className='mt-[200px] mb-[20px] layout-2 flex 1130:items-end bg-purple-20 1130:flex-row flex-col gap-y-3' >
         <h1 className='bg-red-40 text-[55px] md:text-[64px] flex-1 flex flex-col '>
           <span className='text-[16px] uppercase bg-[#00c7A8] w-fit ml-1 px-5 py-2 rounded-[27px]'>{tag}</span>
           {text}
