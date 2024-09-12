@@ -131,12 +131,12 @@ function ClashofclawsPage() {
       </motion.div>
       <BackButton/>
       <PageHeadingComponent
-        text="Clash of Claws"
+        text="Plush Up"
         subtext="VR game Website"
         tag="shipped"
       />
 
-      <ImageHeaderComponent image="/images/Clashofclaws.png" />
+      <ImageHeaderComponent image="/images/4kclaw.png" />
       <ProjectBriefComponent data={briefData} marginBottom={'mt-[100px]'} marginTop={'mb-[140px]'} />
       <div className="layout-2  mb-[100px] md:mb-[200px]" >
         <Image src={'/images/clash1.png'} alt={'image-1'} width={1000} height={1000} className="mx-auto" />
@@ -265,7 +265,7 @@ function ClashofclawsPage() {
           </p>
         </div>
         <div className=" mb-[200px] " >
-          <Image src={'/images/fullaccess.png'} alt={'image-1'} width={1000} height={1000} className="object-cover w-full h-full" />
+          <Image src={'/images/big4kclaw.png'} alt={'image-1'} width={1000} height={1000} className="object-cover w-full h-full" />
         </div>
 
       </motion.div>
