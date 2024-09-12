@@ -84,9 +84,9 @@
   color: #000000;      /* Text color of selected text */
 }
 
-body {
+/* body {
   background-color: #F9F9F9;
-}
+} */
 
 .wrapper1 {
   position: relative;
@@ -126,4 +126,8 @@ body {
   transform: translateZ(-1px);
   /* Move the layer to create a parallax effect */
   /* Optionally, add z-index to layer if needed */
+}
+
+[data-theme='light'] body {
+  background: #F9F9F9;
 }
