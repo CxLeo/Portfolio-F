@@ -1,31 +1,46 @@
 'use client'
 import * as React from "react";
 import { motion } from "framer-motion";
+import { cn } from "@/utilities/utilities";
+import { useTheme } from "next-themes";
 
-const Path = (props:any) => (
-  <motion.path
-    fill="transparent"
-    strokeWidth="2"
-    stroke="hsl(0, 0%, 18%)"
-    strokeLinecap="round"
-    {...props}
-  />
-);
+const Path = (props: any) => {
+  console.log(props);
 
-export const MenuToggle = ({ toggle }:{toggle:any}) => (
-  <button onClick={toggle} className={``}>
-    <svg width="23" height="23" viewBox="0 0 23 23">
+  const { theme } = useTheme();
+console.log('Theme Path =<',theme)
+  return (
+    <motion.path
+
+      strokeWidth="2"
+      // stroke={'gray'}
+      stroke={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black'
+        // 'black', theme ==='dark' && 'white', theme === 'system' && 'dark')
+      )}
+      strokeLinecap="round"
+      {...props}
+    />
+  )
+}
+
+export const MenuToggle = ({ toggle }: { toggle: any }) => (
+  <button onClick={toggle} >
+    <svg width="23" height="23" viewBox="0 0 23 23" className="">
       <Path
         variants={{
           closed: { d: "M 2 2.5 L 20 2.5" },
-          open: { d: "M 3 16.5 L 17 2.5" },
+          open: { d: "M 3 16.5 L 17 2.5", },
+
         }}
+
       />
       <Path
         d="M 2 9.423 L 20 9.423"
+
         variants={{
           closed: { opacity: 1 },
           open: { opacity: 0 },
+
         }}
         transition={{ duration: 0.1 }}
       />

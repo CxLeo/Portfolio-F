@@ -29,7 +29,6 @@ function ImageHeaderComponent({image,height}:imageprops) {
         offset: ["end start", "start start"]
     })
     const customheight=height?`md:h-[${height}]`:'md:h-[1000px]'
-    console.log(customheight)
     const y = useTransform(scrollYProgress, [1, 0], [0,350])
 
     return (

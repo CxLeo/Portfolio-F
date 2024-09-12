@@ -170,7 +170,7 @@ function AIHome() {
                             ))
                         }
                     </div>
-                    <div className="my-[20px] w-full h-0 border-[1px] border-[#D9D9D9]"></div>
+                    <div className="my-[20px] w-full h-[1px]   bg-[#898989]"></div>
                     <div className="w-full flex font-dmsans font-normal text-[16px] leading-[16px]">
                         <p className=" text-[#898989] lg:flex-grow">Based in Toronto, Canada</p>
                         <a href="#works" className="hidden lg:self-end lg:flex gap-x-1">

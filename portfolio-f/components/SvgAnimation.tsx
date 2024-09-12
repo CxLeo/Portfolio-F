@@ -18,8 +18,8 @@ function SvgAnimation() {
                         x="0"
                         y="10"
 
-                        width="100%"
-                        height="100%"
+                        width="100"
+                        height="100"
                         fill="white"
                         animate={{ height: ['0%', '100%'] }}
                         transition={{
@@ -35,8 +35,8 @@ function SvgAnimation() {
                         x="-10"
                         y="21"
 
-                        width="100%"
-                        height="100%"
+                        width="100"
+                        height="100"
                         fill="#7C7C7C"
                         animate={{ height: ['0%', '100%'] }}
                         transition={{
@@ -53,8 +53,8 @@ function SvgAnimation() {
                         x="0"
                         y="0"
                         initial={{ opacity: 0 }}
-                        width="100%"
-                        height="100%"
+                        width="100"
+                        height="100"
                         fill="white"
                         animate={{ width: ['0%', '100%'], opacity: 1 }}
                         transition={{

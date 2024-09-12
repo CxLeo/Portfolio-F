@@ -13,7 +13,7 @@ const variants = {
 };
 
 export const Navigation = ({ toggle }:{toggle:any}) => (
-  <motion.ul variants={variants} className="absolut w-full lg:left-[50%] left-[5%] ul-nav" >
+  <motion.ul variants={variants} className="absolut w-full lg:left-[50%] left-[5%] ul-nav  " >
     {itemIds.map((i) => (
       <MenuItem i={i} key={i} toggle={toggle}/>
     ))}

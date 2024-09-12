@@ -2,8 +2,6 @@
 import AIHome from "@/components/AIHome";
 import SplashAnimation from "@/components/SplashAnimation";
 import { useEffect, useState } from "react";
-import { AnimatePresence } from 'framer-motion'
-import Footer from "@/components/Footer";
 
 export default function Home() {
 
@@ -11,7 +9,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
-    }, 1300);
+    }, 2700);
   }, [loading])
 
   return <>

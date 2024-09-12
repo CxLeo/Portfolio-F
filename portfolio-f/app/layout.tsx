@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBarComponents/NavBar";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,11 +22,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} h-fit`}>
-          <NavBar/>
+    <html lang="en" >
+      <body className={`${inter.className}  h-fit`}>
+        <ThemeProvider
+          // attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          // disableTransitionOnChange
+
+        >
+          <NavBar /> 
           {children}
           <Footer />
+        </ThemeProvider>
       </body>
 
     </html>
