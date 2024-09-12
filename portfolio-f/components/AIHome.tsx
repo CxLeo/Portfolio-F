@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import ReactDOM from "react-dom";
 import { useState } from "react";
 import useMouse from "@react-hook/mouse-position";
-import { motion } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import Link from "next/link";
 
 function AIHome() {
@@ -60,6 +60,59 @@ function AIHome() {
             detail:"Worked on the UI design for high-profile projects such as Tencent Cloud and Joox. I focused on creating intuitive interfaces and user experiences during concept sprints, helping to enhance product value and inform key business decisions."
         }
     ]
+
+    const refProject = useRef(null);
+    const [noqScale,setNoqScale] = useState(1);
+    const { scrollYProgress } = useScroll({
+        target: refProject,
+        offset: ["start start", "end start"],
+    });
+    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+        // console.log("Page scroll: ", latest);
+        setNoqScale(1-latest/4);
+    });
+
+    const refs:React.MutableRefObject<null>[]=[useRef(null),useRef(null),useRef(null),useRef(null)]
+    const [scales,setScales] = useState([1,1,1,1]);
+    const { scrollYProgress:scrollYProgressOne } = useScroll({
+        target: refs[0],
+        offset: ["start start", "end start"],
+    });
+    useMotionValueEvent(scrollYProgressOne, "change", (latest) => {
+        setScales(prev => {
+            return prev.map((number,i)=> i===0?1-latest/4:number);
+        });
+    });
+
+    const { scrollYProgress:scrollYProgressTwo } = useScroll({
+        target: refs[1],
+        offset: ["start start", "end start"],
+    });
+    useMotionValueEvent(scrollYProgressTwo, "change", (latest) => {
+        setScales(prev => {
+            return prev.map((number,i)=> i===1?1-latest/4:number);
+        });
+    });
+
+    const { scrollYProgress:scrollYProgressThree } = useScroll({
+        target: refs[2],
+        offset: ["start start", "end start"],
+    });
+    useMotionValueEvent(scrollYProgressThree, "change", (latest) => {
+        setScales(prev => {
+            return prev.map((number,i)=> i===2?1-latest/4:number);
+        });
+    });
+
+    const { scrollYProgress:scrollYProgressFour } = useScroll({
+        target: refs[3],
+        offset: ["start start", "end start"],
+    });
+    useMotionValueEvent(scrollYProgressFour, "change", (latest) => {
+        setScales(prev => {
+            return prev.map((number,i)=> i===3?1-latest/4:number);
+        });
+    });
 
     const [cursorText, setCursorText] = useState("");
     const [cursorVariant, setCursorVariant] = useState("default");
@@ -188,7 +241,10 @@ function AIHome() {
                     <h1 className="lg:block hidden font-dmsans font-normal text-[48px] leading-[48px] mb-[66px]">Signature Projects</h1>
 
                     {/* main project: NoQ AI*/}
-                    <div className="w-full h-fit mb-[88px]" >
+                    <motion.div 
+                    ref={refProject}
+                    style={{ scale:noqScale,opacity:noqScale}}
+                    className="w-full h-fit mb-[88px] transition duration-500 transform ease-in-out" >
                         <div  className="w-full transition-transform duration-200 transform hover:scale-[1.02] cursor-none"
                             onMouseEnter={projectEnter}
                             onMouseLeave={projectLeave}>
@@ -215,16 +271,16 @@ function AIHome() {
                                 height={370}
                                 className="w-full block lg:hidden"
                             />
-                    
                         </div>
                         <h6 className="font-dmsans font-medium text-[16px] leading-[16px] mt-[13px]">Noqclinic</h6>
                         <p className="font-dmsans text-[16px] text-[#898989] leading-[16px] mt-[5px]">Healthcare Appointment Platform</p>
-                    </div>
+                    </motion.div>
 
                     <div className="w-full flex flex-wrap gap-x-[3.3%] lg:gap-y-[88px] gap-y-[52px] ">
                             {
                                 projectsData.map((project,idx)=>(
-                                    <div key={idx} className="lg:w-[48.35%] w-full h-fit">
+                                    <motion.div ref={refs[idx]}
+                                    style={{ scale:scales[idx],opacity:scales[idx]}} key={idx} className="lg:w-[48.35%] w-full h-fit transition duration-500 transform ease-in-out">
                                         <div className="w-full transition-transform duration-300 transform hover:scale-[1.02] cursor-none relative"
                                             onMouseEnter={projectEnter} 
                                             onMouseLeave={projectLeave}>
@@ -254,7 +310,7 @@ function AIHome() {
                                         </div>
                                         <h6 className="font-dmsans font-medium text-[16px] leading-[16px] mt-[13px]">{project.name}</h6>
                                         <p className="font-san font-normal text-[16px] text-[#898989] leading-[16px] mt-[5px]">{project.slung}</p>
-                                    </div>
+                                    </motion.div>
                                 ))
                             }
                         </div>
