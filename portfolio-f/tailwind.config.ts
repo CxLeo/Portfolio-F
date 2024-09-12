@@ -49,7 +49,16 @@ const config: Config = {
       '2xl': '1536px',
       'blur-r-hide':'1310px',
       '1130':'1130px'
-      
+    },
+    keyframes: {
+      breathe: {
+        '0%': { backgroundColor: 'transparent', boxShadow: '0 0 10px rgba(0, 0, 255, 0)' },
+        '75%': { backgroundColor: '#00C7A8', boxShadow: '0 0 20px #00C7A8' },
+        '100%': { backgroundColor: 'transparent', boxShadow: '0 0 10px rgba(0, 0, 255, 0)' },
+      },
+    },
+    animation: {
+      breathe: 'breathe 1.5s ease-in-out infinite',
     },
     
   },

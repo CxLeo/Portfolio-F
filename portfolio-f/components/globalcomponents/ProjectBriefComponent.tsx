@@ -23,7 +23,7 @@ function ProjectBriefComponent({data,marginTop,marginBottom}:{data:BriefProps,ma
         <div className="flex-[0.9] ">
             <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
             <p className="w-full font-medium font-dmsans text-[22px] leading-[28px] lg:text-[32px] lg:leading-[41px] whitespace-pre-line">{data.summary}</p>
-            <a href={data.url} className="bg-white hover:bg-[#D9D9D9] transition-colors duration-300 ease-in-out uppercase text-[15px] font-medium leading-[18px] px-3 py-2 border-[1px] border-[#CACACA] rounded-full hidden lg:flex  w-fit mt-[80px]">
+            <a href={data.url} className="hover:bg-[#D9D9D9] transition-colors duration-300 ease-in-out uppercase text-[15px] font-medium leading-[18px] px-3 py-2 border-[1px] border-[#CACACA] rounded-full hidden lg:flex  w-fit mt-[80px]">
                 {data.product}
                 <svg width="14" height="14" viewBox="0 0 27 26" fill="none" className='self-center ml-1'>
                     <path fillRule="evenodd" clipRule="evenodd" d="M0.225193 22.2599L17.3952 5.08981L2.00649 5.09574L2.00844 0.0262148L26.0514 0.0169506L26.0421 24.0599L20.9726 24.0619L20.9785 8.67314L3.80851 25.8432L0.225193 22.2599Z" fill="#00C7A8"/>

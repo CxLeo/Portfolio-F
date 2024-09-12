@@ -33,6 +33,7 @@ const introData: IntroProps = {
   project: "Noqclinic",
   title: "An AI-driven healthcare online booking platform",
   img: "/images/noqclinic/logo.png",
+  video:"/files/noq.mp4",
   description:
     "A virtual healthcare platform combining AI with telemedicine for efficient at-home care. Patients use AI for assessments and book real doctors for comprehensive care, bridging the gap between patients and providers.",
   labels: [
