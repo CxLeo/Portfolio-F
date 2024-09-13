@@ -106,7 +106,6 @@ function ClashofclawsPage() {
         subtext="VR game Website"
         tag="shipped"
       />
-
       <ImageHeaderComponent image="/images/plushup/hero.png" />
       <ProjectBriefComponent data={briefData} marginBottom={'mt-[100px]'} marginTop={'mb-[140px]'} />
       <div className="layout-2  mb-[100px] md:mb-[200px]" >
