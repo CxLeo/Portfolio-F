@@ -4,13 +4,14 @@ import Image from "next/image";
 import FooterItem from './FooterItem';
 import { cn } from '@/utilities/utilities';
 import { useTheme } from 'next-themes';
+import Line from './globalcomponents/Line';
 
 function Footer() {
     const { theme } = useTheme();
     const footerNavs = [
         {
             label: "About",
-            url: "#about"
+            url: "/#about"
         },
         {
             label: "LinkedIn",
@@ -18,11 +19,11 @@ function Footer() {
         },
         {
             label: "Works",
-            url: "#works"
+            url: "/#works"
         },
         {
             label: "See full CV",
-            url: "#"
+            url: "/files/frank-resume.pdf"
         }
     ]
 
@@ -71,7 +72,8 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className=" w-full lg:mt-[50px] mt-[82px] h-0 border-[1px] border-[#D9D9D9]" />
+                <div className='w-full lg:mt-[50px] mt-[82px]'><Line/></div>
+                
                 <div className='w-[90%]  mx-auto mt-[26px] pb-[26px] flex flex-col lg:flex-row gap-y-2'>
                     <p className='flex-grow text-[14px] leading-[14px] font-dmsans text-[#898989]'> © 2024 Frank Zhang </p>
                     <p className=' lg:self-end text-[14px] leading-[14px] font-dmsans text-[#898989]'> Developed by Chenxuan Wang, Rohan Vania </p>

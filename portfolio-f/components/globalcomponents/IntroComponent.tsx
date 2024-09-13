@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from "framer-motion";
+import Line from './Line';
 
 
 export type IntroProps={
@@ -17,8 +18,8 @@ export type IntroProps={
 function IntroComponent({data}:{data:IntroProps}) {
   return (
     <motion.div initial={{y:50,opacity:0}} whileInView={{y:0,opacity:1}} viewport={{ once: true }} transition={{type: 'tween', duration: 0.3, ease: 'easeInOut'}} className=' layout-2'>
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className='flex flex-col lg:flex-row gap-y-[50px]'>
+        <Line/>
+        <div className='mt-[15px] flex flex-col lg:flex-row gap-y-[50px]'>
             <div className='flex-1'>
                 <p className='font-dmsans lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px]'>
                     What&apos;s {data.project}?
@@ -50,8 +51,8 @@ function IntroComponent({data}:{data:IntroProps}) {
                             {
                                 data.figures.map((figure,idx)=>(
                                     <div key={idx} >
-                                        <div className="mb-[13px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-                                        <h3 className='lg:text-[64px] lg:leading-[97px] text-[48px] leading-[72px] font-medium font-dmsans'>{data.figures?.[idx] }</h3>
+                                        <Line/>
+                                        <h3 className='lg:text-[64px] lg:leading-[97px] text-[48px] leading-[72px] font-medium font-dmsans mt-[13px]'>{data.figures?.[idx] }</h3>
                                         <p className='text-[16px] leading-[24px] mb-[15px]'>{data.labels?.[idx+1]}</p>
                                     </div>
                                 ))

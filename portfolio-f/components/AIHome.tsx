@@ -220,14 +220,14 @@ function AIHome() {
 
             {/* hero Section */}
             <div className="w-[90%] mx-auto bg-red-30  apt-[70px] lg:pl-[48px] flex flex-col  h-screen pb-[100px] ">
-                <div className="w-full mt-[80px">
+                <div className="w-full">
                     <Line/>
                     <div className="flex w-full">
                         <div className="flex flex-wrap gap-x-2 gap-y-2 mt-[20px]">
                             {
                                 heroData.map((label, idx) => (
                                     <div key={idx} 
-                                    className={`whitespace-nowrap border-[1px] ${idx>0?"md:block hidden":"block"} rounded-full border-[#D7D7D7] w-fit h-[32px] py-[9px] px-[13px] text-[14px] font-dmsans leading-[14px]`}>
+                                    className={`whitespace-nowrap border-[1px] ${idx>0?"md:block hidden":"block"} rounded-full border-[rgba(128,128,128,0.3)] w-fit h-[32px] py-[8px] px-[13px] text-[14px] font-dmsans leading-[14px]`}>
                                         {label}
                                     </div>
                                 ))
@@ -433,10 +433,10 @@ function AIHome() {
                     </div>
                 </div> */}
 
-                <div className="mt-[170px] w-full ">
+                <div id="about" className="mt-[170px] w-full ">
                     <div className="flex flex-col lg:flex-row">
                         <div ref={refFrank} style={{ scale:frankScale,opacity:frankScale}} className="flex-1 transition duration-500 transform ease-in-out">
-                            <Image  src="/images/ai-home/profileB.png" alt="profile" width={632} height={840} className="lg:w-[85%] w-full "/>
+                            <Image  src="/images/ai-home/profileB.png" alt="profile" width={632} height={840} className="lg:w-[85%] w-full rounded-[20px]"/>
                         </div>
                     <div className="flex-1">
                         <div className="lg:mt-[480px] mt-[40px] flex">

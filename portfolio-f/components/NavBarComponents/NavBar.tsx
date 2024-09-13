@@ -105,7 +105,7 @@ const NavBar = () => {
         <div className="w-full flex ">
           <a href="/" className="w-[35px] h-[50px] mt-[15px] ml-[7.5%]  hover:-translate-y-[2px] transition-transform duration-200 transform">
           <svg width="35" height="50" viewBox="0 0 35 50" fill="" xmlns="http://www.w3.org/2000/svg"
-                        className={cn('w-[35px]  h-[50px] hover:-translate-y-[6px] transition-transform duration-200 transform')}
+                        className={cn('w-[30px]  h-[45px] hover:-translate-y-[6px] transition-transform duration-200 transform')}
                     >
                         <path d="M20.4122 0.00943498C25.0178 0.00943498 30.3931 0 34.9987 0C35.0002 2.80977 35.0013 6.37122 34.9959 9.181C34.9899 12.1636 33.4481 14.1629 30.8846 15.4768C29.8704 15.9962 28.7627 16.191 27.6285 16.1918C18.6842 16.1964 8.94486 16.1948 0.000611802 16.1941C-0.000908683 13.4032 0.002786 9.90505 0.00277839 7.07504C-0.0261108 4.47452 1.20852 2.51974 3.28475 1.12168C4.42511 0.353656 5.71143 -0.00344206 7.10952 0.00262329C11.5433 0.0215775 15.9777 0.00943498 20.4122 0.00943498Z"
                             fill={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')} />
