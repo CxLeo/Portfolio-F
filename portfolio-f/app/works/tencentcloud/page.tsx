@@ -8,10 +8,13 @@ import { motion } from "framer-motion";
 import Image from 'next/image';
 import useMouse from '@react-hook/mouse-position';
 import BackButton from '@/components/BackButton';
+import Line from '@/components/globalcomponents/Line';
+import { useTheme } from "next-themes"
+import { cn } from "@/utilities/utilities";
 
 function TencentCloudPage
 () {
-
+  const { theme, setTheme,resolvedTheme } = useTheme();
   const [cursorText, setCursorText] = useState("");
   const [cursorVariant, setCursorVariant] = useState("default");
   const ref = React.useRef(null);
@@ -130,8 +133,8 @@ function TencentCloudPage
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2  lg:mb-[240px] mb-[144px] mt-[200px]"
       >
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className=" flex flex-col lg:flex-row  gap-y-[40px]">
+        <Line/>
+        <div className="mt-[10px] flex flex-col lg:flex-row  gap-y-[40px]">
             <h2 className="flex-1 lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] font-dmsans ">
               Background
             </h2>
@@ -175,7 +178,7 @@ function TencentCloudPage
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2  lg:mb-[113px] mb-[41px]"
       >
-        <h3 className='font-bold text-[16px] leading-[19.36px] text-[#3A3A3A] text-center w-full mb-[30px]'>The Birth of Cloud Products</h3>
+        <h3 className='font-bold text-[16px] leading-[19.36px]  text-center w-full mb-[30px]'>The Birth of Cloud Products</h3>
         <div className='w-full mb-[20px]'>
           <Image
               alt="Tencent Cloud"
@@ -217,7 +220,7 @@ function TencentCloudPage
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2 lg:mb-[143px] mb-[41px]"
       >
-        <h3 className='font-bold text-[16px] leading-[19.36px] text-[#3A3A3A] text-center w-full mb-[30px]'>Product Image Design</h3>
+        <h3 className='font-bold text-[16px] leading-[19.36px]  text-center w-full mb-[30px]'>Product Image Design</h3>
         <div className='w-full'>
           <Image
               alt="Tencent Cloud"
@@ -275,7 +278,7 @@ function TencentCloudPage
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2 mb-[55px] lg:mb-[200px] "
       >
-        <h3 className='font-bold lg:text-[24px] lg:leading-[28px] text-[10px] leading-[8px] text-[#3A3A3A]  lg:mb-[80px] mb-[20px]'>{`// Virtual Texture Study`}</h3>
+        <h3 className='font-bold lg:text-[24px] lg:leading-[28px] text-[10px] leading-[8px]   lg:mb-[80px] mb-[20px]'>{`// Virtual Texture Study`}</h3>
         <div className='w-full'>
           <Image
               alt="Tencent Cloud"
@@ -306,7 +309,7 @@ function TencentCloudPage
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2 mb-[53px]  lg:mb-[223px]"
       >
-        <h3 className='font-bold lg:text-[24px] lg:leading-[28px] text-[10px] leading-[8px] text-[#3A3A3A]  lg:mb-[80px]'>{`// Product System`}</h3>
+        <h3 className='font-bold lg:text-[24px] lg:leading-[28px] text-[10px] leading-[8px]  lg:mb-[80px]'>{`// Product System`}</h3>
         <div className='w-full'>
           <Image
               alt="Tencent Cloud"
@@ -327,26 +330,26 @@ function TencentCloudPage
           <div className='flex-1 flex'>
             <p className='font-bold text-[21px] leading-[24.2px]'>24px</p>
               <svg width="77" height="11" viewBox="0 0 77 11" fill="none" xmlns="http://www.w3.org/2000/svg" className='mt-2 ml-[25px]'>
-                <line x1="1.40479" y1="0.591797" x2="1.40478" y2="10.9022" stroke="black"/>
-                <path d="M76.5144 5.74805L1.76393 5.74805" stroke="black"/>
-                <line x1="76.155" y1="0.591797" x2="76.155" y2="10.9022" stroke="black"/>
+                <line x1="1.40479" y1="0.591797" x2="1.40478" y2="10.9022" stroke={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
+                <path d="M76.5144 5.74805L1.76393 5.74805" stroke={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
+                <line x1="76.155" y1="0.591797" x2="76.155" y2="10.9022" stroke={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
               </svg>
           </div>
           <div className='flex-1 flex'>
             <p className='font-bold text-[21px] leading-[24.2px]'>40px</p>
             <svg width="202" height="11" viewBox="0 0 202 11" fill="none" xmlns="http://www.w3.org/2000/svg" className='mt-2 ml-[25px]'>
-              <line x1="1.17261" y1="0.591797" x2="1.17261" y2="10.9022" stroke="black"/>
-              <path d="M201.726 6.17578L1.10245 6.17578" stroke="black"/>
-              <line x1="201.366" y1="0.591797" x2="201.366" y2="10.9022" stroke="black"/>
+              <line x1="1.17261" y1="0.591797" x2="1.17261" y2="10.9022" stroke={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
+              <path d="M201.726 6.17578L1.10245 6.17578" stroke={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
+              <line x1="201.366" y1="0.591797" x2="201.366" y2="10.9022" stroke={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
             </svg>
 
           </div>
           <div className='flex-1 flex'>
             <p className='font-bold text-[21px] leading-[24.2px]'>100px</p>
             <svg width="355" height="11" viewBox="0 0 355 11" fill="none" xmlns="http://www.w3.org/2000/svg" className='mt-2 ml-[25px]'>
-              <line x1="1.36865" y1="0.591797" x2="1.36865" y2="10.9022" stroke="black"/>
-              <path d="M354.001 6.17578L1.62375 6.17578" stroke="black"/>
-              <line x1="353.64" y1="0.591797" x2="353.64" y2="10.9022" stroke="black"/>
+              <line x1="1.36865" y1="0.591797" x2="1.36865" y2="10.9022" stroke={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
+              <path d="M354.001 6.17578L1.62375 6.17578" stroke={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
+              <line x1="353.64" y1="0.591797" x2="353.64" y2="10.9022" stroke={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
             </svg>
           </div>
         </div>
@@ -355,25 +358,25 @@ function TencentCloudPage
           <div className='flex-1 flex'>
             <p className='font-bold text-[12px] leading-[16px]'>24px</p>
             <svg width="23" height="4" viewBox="0 0 23 4" fill="none" xmlns="http://www.w3.org/2000/svg" className='mt-2 ml-[10px]'>
-            <path fillRule="evenodd" clipRule="evenodd" d="M0.109 3.88014L0.109 0.898437L0.398193 0.898438L0.398193 3.88014L0.109 3.88014Z" fill="black"/>
-            <path fillRule="evenodd" clipRule="evenodd" d="M0.357271 2.24401L21.9746 2.24401V2.5332L0.357271 2.5332V2.24401Z" fill="black"/>
-            <path fillRule="evenodd" clipRule="evenodd" d="M21.7262 3.88014L21.7262 0.898437L22.0154 0.898438L22.0154 3.88014L21.7262 3.88014Z" fill="black"/>
+            <path fillRule="evenodd" clipRule="evenodd" d="M0.109 3.88014L0.109 0.898437L0.398193 0.898438L0.398193 3.88014L0.109 3.88014Z" fill={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
+            <path fillRule="evenodd" clipRule="evenodd" d="M0.357271 2.24401L21.9746 2.24401V2.5332L0.357271 2.5332V2.24401Z" fill={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
+            <path fillRule="evenodd" clipRule="evenodd" d="M21.7262 3.88014L21.7262 0.898437L22.0154 0.898438L22.0154 3.88014L21.7262 3.88014Z" fill={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
             </svg>
           </div>
           <div className='flex-1 flex'>
             <p className='font-bold text-[12px] leading-[16px]'>40px</p>
             <svg width="60" height="4" viewBox="0 0 60 4" fill="none" xmlns="http://www.w3.org/2000/svg" className='mt-2 ml-[10px]'>
-            <path fillRule="evenodd" clipRule="evenodd" d="M0.934928 3.88014L0.934928 0.898437L1.22412 0.898438L1.22412 3.88014L0.934928 3.88014Z" fill="black"/>
-            <path fillRule="evenodd" clipRule="evenodd" d="M1.05943 2.36901L59.0784 2.36901V2.6582L1.05943 2.6582V2.36901Z" fill="black"/>
-            <path fillRule="evenodd" clipRule="evenodd" d="M58.8297 3.88014L58.8297 0.898437L59.1189 0.898438L59.1189 3.88014L58.8297 3.88014Z" fill="black"/>
+            <path fillRule="evenodd" clipRule="evenodd" d="M0.934928 3.88014L0.934928 0.898437L1.22412 0.898438L1.22412 3.88014L0.934928 3.88014Z" fill={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
+            <path fillRule="evenodd" clipRule="evenodd" d="M1.05943 2.36901L59.0784 2.36901V2.6582L1.05943 2.6582V2.36901Z" fill={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
+            <path fillRule="evenodd" clipRule="evenodd" d="M58.8297 3.88014L58.8297 0.898437L59.1189 0.898438L59.1189 3.88014L58.8297 3.88014Z" fill={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
             </svg>
           </div>
           <div className='flex-1 flex'>
             <p className='font-bold text-[12px] leading-[16px]'>100px</p>
             <svg width="103" height="4" viewBox="0 0 103 4" fill="none" xmlns="http://www.w3.org/2000/svg" className='mt-2 ml-[10px]'>
-              <path fillRule="evenodd" clipRule="evenodd" d="M0.29943 3.88014L0.29943 0.898437L0.588623 0.898438L0.588623 3.88014L0.29943 3.88014Z" fill="black"/>
-              <path fillRule="evenodd" clipRule="evenodd" d="M0.518036 2.36901L102.423 2.36901V2.6582L0.518036 2.6582V2.36901Z" fill="black"/>
-              <path fillRule="evenodd" clipRule="evenodd" d="M102.174 3.88014L102.174 0.898437L102.463 0.898438L102.463 3.88014L102.174 3.88014Z" fill="black"/>
+              <path fillRule="evenodd" clipRule="evenodd" d="M0.29943 3.88014L0.29943 0.898437L0.588623 0.898438L0.588623 3.88014L0.29943 3.88014Z" fill={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
+              <path fillRule="evenodd" clipRule="evenodd" d="M0.518036 2.36901L102.423 2.36901V2.6582L0.518036 2.6582V2.36901Z" fill={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
+              <path fillRule="evenodd" clipRule="evenodd" d="M102.174 3.88014L102.174 0.898437L102.463 0.898438L102.463 3.88014L102.174 3.88014Z" fill={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black')}/>
             </svg>
           </div>
         </div>
@@ -386,7 +389,7 @@ function TencentCloudPage
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2 mb-[53px]  lg:mb-[250px]"
       >
-        <h3 className='font-bold lg:text-[24px] lg:leading-[28px] text-[10px] leading-[8px] text-[#3A3A3A]  mb-[15px] lg:mb-[60px]'>{`// States System`}</h3>
+        <h3 className='font-bold lg:text-[24px] lg:leading-[28px] text-[10px] leading-[8px]   mb-[15px] lg:mb-[60px]'>{`// States System`}</h3>
         <Image
               alt="Tencent Cloud"
               src="/images/tencentcloud/sec8.png"
@@ -411,7 +414,7 @@ function TencentCloudPage
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2 mb-[53px]  lg:mb-[250px]"
       >
-        <h3 className='font-bold lg:text-[24px] lg:leading-[28px] text-[10px] leading-[8px] text-[#3A3A3A]  mb-[15px] lg:mb-[60px]'>{`// Tencent Cloud Website`}</h3>
+        <h3 className='font-bold lg:text-[24px] lg:leading-[28px] text-[10px] leading-[8px]   mb-[15px] lg:mb-[60px]'>{`// Tencent Cloud Website`}</h3>
         <div className='w-full mb-[20px] lg:mb-[67px]'>
           <Image
               alt="Tencent Cloud"
@@ -463,14 +466,14 @@ function TencentCloudPage
         <div className='w-full mb-[20px] lg:mb-[67px]'>
           <Image
               alt="Tencent Cloud"
-              src="/images/tencentcloud/sec11.png"
+              src="/images/tencentcloud/sec12.png"
               width={1313}
               height={1420}
               className="w-full lg:block hidden"
           />
           <Image
               alt="Tencent Cloud"
-              src="/images/tencentcloud/sec11Mobile.png"
+              src="/images/tencentcloud/sec12Mobile.png"
               width={380}
               height={410}
               className="w-full block lg:hidden"
@@ -479,14 +482,14 @@ function TencentCloudPage
         <div className='w-full mb-[20px] lg:mb-[67px]'>
           <Image
               alt="Tencent Cloud"
-              src="/images/tencentcloud/sec11.png"
+              src="/images/tencentcloud/sec13.png"
               width={1313}
               height={1361}
               className="w-full lg:block hidden"
           />
           <Image
               alt="Tencent Cloud"
-              src="/images/tencentcloud/sec11Mobile.png"
+              src="/images/tencentcloud/sec13Mobile.png"
               width={380}
               height={393}
               className="w-full block lg:hidden"

@@ -14,6 +14,7 @@ import ImageHeaderComponent from "@/components/globalcomponents/ImageHeaderCompo
 import useMouse from "@react-hook/mouse-position";
 import NoqClinicSwiper, { Slider } from "@/components/NoqClinicSwiper";
 import BackButton from "@/components/BackButton";
+import Line from "@/components/globalcomponents/Line";
 const briefData: BriefProps = {
   summary:
     "I was the design lead for Platform Noqclinic - a seamless AI-driven healthcare online booking platform.",
@@ -196,7 +197,7 @@ function NoqClinicPage() {
         subtext="Healthcare Appointment Platform"
         tag="new"
       />
-      <ImageHeaderComponent image="/images/noq-banner.jpg" />
+      <ImageHeaderComponent image="/images/noqclinic/noq-banner.jpg" />
       <ProjectBriefComponent data={briefData} />
       <IntroComponent data={introData} />
       {/* Context section */}
@@ -207,8 +208,8 @@ function NoqClinicPage() {
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2  mb-[350px] mt-[280px]"
       >
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className='flex flex-col lg:flex-row gap-y-[40px]'>
+        <Line/>
+        <div className='flex flex-col lg:flex-row gap-y-[40px] mt-[10px]'>
           <div className='flex-1 '>
             <p className="font-medium text-[20px] leading-[25px] lg:text-[24px] lg:leading-[30px] font-dmsans">Context</p>
             <p className="font-medium text-[20px] leading-[25px] lg:text-[24px] lg:leading-[30px] font-dmsans text-[#898989] w-[70%]">&quot;Can We Make Healthcare Appointments Easier for Everyone?&quot;</p>
@@ -220,17 +221,17 @@ function NoqClinicPage() {
               Seeing this disconnect, we envisioned a solution: a platform that would transform healthcare booking by making it as simple as a few clicks...
             </p>
 
-            <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-            <p className='text-[14px] leading-[21px] text-[#00C7A8] mb-[10px]'>Project goal</p>
-            <p className="font-dmsans font-medium text-[22px] leading-[28px] lg:text-[32px] lg:leading-[41px] mb-[62px]">
+            <Line/>
+            <p className='text-[14px] leading-[21px] text-[#00C7A8] mb-[10px] mt-[10px]'>Project goal</p>
+            <p className="font-dmsans text-[22px] leading-[28px] lg:text-[32px] lg:leading-[41px] mb-[62px]">
               Build an AI-powered platform that doesn&apos;t just manage appointments but transforms them. Our platform is designed to make appointment management seamless for both patients and providers, ensuring that every interaction is efficient, timely, and user-friendly.
             </p>
 
             <p className='text-[14px] leading-[21px] text-[#00C7A8] mb-[10px]'>Key metrics</p>
-            <div className="mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-            <p className="text-[16px] leading-[22px] mb-[10px]">Achieve a 50% reduction in no-show rates by making the process of scheduling and attending appointments as easy as possible.</p>
-            <div className="mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-            <p className="text-[16px] leading-[22px] mb-[10px]">Increase booking efficiency by 40% with intelligent, AI-driven scheduling tools, and boost overall patient satisfaction to 90% by the end of Q4 FY1.</p>
+            <Line/>
+            <p className="text-[16px] leading-[22px] mb-[10px] mt-[20px]">Achieve a 50% reduction in no-show rates by making the process of scheduling and attending appointments as easy as possible.</p>
+            <Line/>
+            <p className="text-[16px] leading-[22px] mb-[10px] mt-[20px]">Increase booking efficiency by 40% with intelligent, AI-driven scheduling tools, and boost overall patient satisfaction to 90% by the end of Q4 FY1.</p>
 
           </div>
         </div>
@@ -243,8 +244,8 @@ function NoqClinicPage() {
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2  mb-[200px]"
       >
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className='flex flex-col lg:flex-row gap-y-[40px]'>
+        <Line/>
+        <div className='flex flex-col lg:flex-row gap-y-[40px]  mt-[10px]'>
           <div className='flex-1 '>
             <p className='font-dmsans lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px]'>What we learned</p>
             <p className='font-dmsans lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] text-[#898989] w-[90%]'>The Current Healthcare Booking Systems Are Outdated and Fragmented</p>
@@ -255,7 +256,7 @@ function NoqClinicPage() {
             {
               issuesData.map((issue,idx)=>(
                 <div key={idx} className="w-full">
-                    <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
+                    <Line/>
                     <p className="text-[17px] font-[350] leading-[24px] text-[#898989] mt-[10px] mb-[12px]">{issue.title}</p>
                     <p className="text-[17px] font-[350] leading-[24px] mb-[20px]">{issue.description}</p>
                 </div>
@@ -282,8 +283,8 @@ function NoqClinicPage() {
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2  mb-[325px]"
       >
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <p className="lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] font-dmsans mb-[67px]">Process</p>
+        <Line/>
+        <p className="lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] font-dmsans mb-[67px]  mt-[10px]">Process</p>
         <NoqClinicSwiper data={sliderData}/>
       </motion.div>
       {/* demo section */}
@@ -294,8 +295,8 @@ function NoqClinicPage() {
       transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
       className=" layout-2  mb-[290px] "
       >
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <h2 className=" lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] mb-[50px] font-dmsans">
+        <Line/>
+        <h2 className=" lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] mb-[50px] font-dmsans  mt-[10px]">
           Final Design
         </h2>
 
@@ -306,8 +307,8 @@ function NoqClinicPage() {
                 <source src={design.video} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-              <div className="flex flex-col lg:flex-row gap-y-[44px]">
+              <Line/>
+              <div className="flex flex-col lg:flex-row gap-y-[44px]  mt-[10px]">
                 <h6 className="flex-1 font-dmsans text-[18px] leading-[22px] lg:text-[24px] lg:leading-[30px] font-[450]">
                   {design.brief}
                 </h6>
@@ -329,8 +330,8 @@ function NoqClinicPage() {
       transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
       className=" layout-2  mb-[290px] "
       >
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className=" flex flex-col lg:flex-row gap-x-[3%] gap-y-[40px]">
+        <Line/>
+        <div className=" flex flex-col lg:flex-row gap-x-[3%] gap-y-[40px]  mt-[10px]">
             <h2 className="flex-1 lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] font-dmsans ">
               Impact
             </h2>
@@ -348,8 +349,8 @@ function NoqClinicPage() {
       transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
       className=" layout  mb-[290px] "
       >
-        <div className="mb-[25px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className="ml-[50%]">
+        <Line/>
+        <div className="ml-[50%] mt-[25px]">
           <h6 className="lg:text-[32px] lg:leading-[32px] text-[22px] leading-[27px] font-medium font-dmsans mb-[24px]">Request a case study</h6>
           <p className="text-[21px] leading-[21px] mb-[66px] text-[#898989]">Want to learn more about this project? Get in touch to request a case study.</p>
           <a href="mailto:franketns@gmail.com" className="bg-[#00C7A8] py-[10px] px-[21px] rounded-[20px]"> GET IN TOUCH</a>

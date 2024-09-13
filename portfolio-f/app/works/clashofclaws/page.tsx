@@ -12,6 +12,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion';
 import useMouse from "@react-hook/mouse-position";
 import BackButton from "@/components/BackButton";
+import Line from "@/components/globalcomponents/Line";
 
 const briefData: BriefProps = {
   summary:
@@ -27,36 +28,6 @@ const briefData: BriefProps = {
   timeline: "Q32023 - Now",
   url: "https://plush-up.com",
 };
-
-const introData: IntroProps = {
-  project: "Noqclinic",
-  title: "An AI-driven healthcare online booking platform",
-  img: "/images/noqclinic/logo.png",
-  description:
-    "A virtual healthcare platform combining AI with telemedicine for efficient at-home care. Patients use AI for assessments and book real doctors for comprehensive care, bridging the gap between patients and providers.",
-  labels: [
-    "Some numbers for this project",
-    "Web pages",
-    "Teams",
-    "Cloud services & tools",
-  ],
-  figures: ["2300+", "50+", "80+"],
-};
-
-const issuesData = [
-  {
-    title: "Prolonged Wait Times & Lack of Transparency",
-    description: "Before patients can even secure an appointment, they often endure long wait times and a confusing booking process. Most patients are unaware of available slots or the best providers for their needs, leading to a sense of frustration and helplessness."
-  },
-  {
-    title: "Administrative Overload & Fragmented Data",
-    description: "Providers are caught in a web of manual scheduling, managing no-shows, and dealing with scattered patient information. This inefficiency prevents them from focusing on patient care and improving healthcare outcomes."
-  },
-  {
-    title: "Limited Use of Technology & Integration",
-    description: "Current systems lack advanced technology integration. They fail to utilize AI to predict patient needs or optimize provider schedules, resulting in underutilized resources and patient dissatisfaction."
-  }
-]
 
 function ClashofclawsPage() {
   const [cursorText, setCursorText] = useState("");
@@ -135,11 +106,13 @@ function ClashofclawsPage() {
         subtext="VR game Website"
         tag="shipped"
       />
-
-      <ImageHeaderComponent image="/images/4kclaw.png" />
+      <ImageHeaderComponent image="/images/plushup/hero.png" />
       <ProjectBriefComponent data={briefData} marginBottom={'mt-[100px]'} marginTop={'mb-[140px]'} />
       <div className="layout-2  mb-[100px] md:mb-[200px]" >
-        <Image src={'/images/clash1.png'} alt={'image-1'} width={1000} height={1000} className="mx-auto" />
+        <video width={1312} height={829} loop preload="auto" playsInline autoPlay className="rounded-[20px] mx-auto">
+          <source src={'/files/plushup.mp4'} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       <motion.div
@@ -147,34 +120,15 @@ function ClashofclawsPage() {
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
-        className=" layout-2  my-10"
-
+        className=" layout-2  my-10 "
       >
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className=" flex flex-col lg:flex-row  gap-y-[40px] pb-[120px]">
-          <h2 className="flex-1 lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] font-dmsans ">
-            Solution
-          </h2>
-          <p className="flex-1 text-[16px]  mt-[40px">
-            A dynamic video game website inspired by the aesthetics of neo-futurism and cyberpunk. Designed the Clash of the Claws website, which features the game and a daily sign-in rewards system to boost user retention, <span className="font-bold">contributing to an increase of over 500 game downloads.</span> In this project, We used Figma and Adobe Illustrator to create unique, striking visuals that emphasize the energy and immersion of the gaming world.
-          </p>
-        </div>
-      </motion.div>
-
-      <motion.div
-        initial={{ y: 50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
-        className=" layout-2  my-10"
-      >
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className=" flex flex-col lg:flex-row  gap-y-[40px] mt-5 pb-[100px]">
+        <Line/>
+        <div className=" flex flex-col lg:flex-row  gap-y-[40px] mt-5  pb-[200px]">
           <h2 className="flex-1 lg:text-[48px]  text-[32px] leading-[40px] font-dmsans ">
             Problem
           </h2>
           <p className="flex-1 text-[16px]  mt-[40px">
-            The arcade game market is highly competitive, with users often disengaging due to a lack of return incentives. Clash of the Claws faced challenges in retaining players and maintaining engagement, struggling with player loyalty and brand visibility without a structured reward system or strong digital presence to support advertising and promotion efforts.
+            The arcade game market is highly competitive, with users often disengaging due to a lack of return incentives. Plush Up faced challenges in retaining players and maintaining engagement, struggling with player loyalty and brand visibility without a structured reward system or strong digital presence to support advertising and promotion efforts.
             <span className="text-[26px] mt-[55px] block">
               Recognizing this, we saw an opportunity to boost user retention through gamified features and stronger brand outreach,
               <span className="text-[#00C7A8]">
@@ -191,15 +145,36 @@ function ClashofclawsPage() {
         viewport={{ once: true }}
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2  my-10"
+
       >
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
+        <Line/>
+        <div className="mt-[10px] flex flex-col lg:flex-row  gap-y-[40px]  pb-[200px]">
+          <h2 className="flex-1 lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] font-dmsans ">
+            Solution
+          </h2>
+          <p className="flex-1 text-[16px]  mt-[40px">
+            A dynamic video game website inspired by the aesthetics of neo-futurism and cyberpunk. Designed the Plush Up website, which features the game and a daily sign-in rewards system to boost user retention, <span className="font-bold">contributing to an increase of over 500 game downloads.</span> In this project, We used Figma and Adobe Illustrator to create unique, striking visuals that emphasize the energy and immersion of the gaming world.
+          </p>
+        </div>
+      </motion.div>
+
+      
+
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
+        className=" layout-2  my-10"
+      >
+        <Line/>
         <div className=" flex flex-col lg:flex-row  gap-y-[40px] mt-5 pb-[100px]">
           <h2 className="flex-1 lg:text-[48px]  text-[32px] leading-[40px] font-dmsans ">
             Style Guide
           </h2>
         </div>
         <div className=" mb-[200px] " >
-          <Image src={'/images/styleguide.png'} alt={'image-1'} width={1000} height={1000} className="object-cover w-full h-full" />
+          <Image src={"/images/plushup/style.png"} alt={'image-1'} width={1000} height={1000} className="object-cover w-full h-full" />
         </div>
 
       </motion.div>
@@ -211,7 +186,7 @@ function ClashofclawsPage() {
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2  my-10"
       >
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
+        <Line/>
         <div className=" flex flex-col lg:flex-row  gap-y-[40px] mt-5 pb-[100px]">
           <h2 className="flex-1 lg:text-[48px]  text-[32px] leading-[40px] font-dmsans ">
             Daily Check-In
@@ -221,7 +196,7 @@ function ClashofclawsPage() {
           </p>
         </div>
         <div className=" mb-[200px] " >
-          <Image src={'/images/streak.png'} alt={'image-1'} width={1000} height={1000} className="object-cover w-full h-full" />
+          <Image src={'/images/plushup/daily.png'} alt={'image-1'} width={1000} height={1000} className="object-cover w-full h-full" />
         </div>
 
       </motion.div>
@@ -233,7 +208,7 @@ function ClashofclawsPage() {
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2  my-10"
       >
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
+        <Line/>
         <div className=" flex flex-col lg:flex-row  gap-y-[40px] mt-5 pb-[100px]">
           <h2 className="flex-1 lg:text-[48px]  text-[32px] leading-[55px] font-dmsans ">
             Player<br /> Leaderboard
@@ -243,7 +218,7 @@ function ClashofclawsPage() {
           </p>
         </div>
         <div className=" mb-[200px] " >
-          <Image src={'/images/DailyCheck.png'} alt={'image-1'} width={1000} height={1000} className="object-cover w-full h-full" />
+          <Image src={'/images/plushup/player.png'} alt={'image-1'} width={1000} height={1000} className="object-cover w-full h-full" />
         </div>
 
       </motion.div>
@@ -255,7 +230,7 @@ function ClashofclawsPage() {
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2  my-10"
       >
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
+        <Line/>
         <div className=" flex flex-col lg:flex-row  gap-y-[40px] mt-5 pb-[100px]">
           <h2 className="flex-1 lg:text-[48px]  text-[32px] leading-[40px] font-dmsans ">
             Full Preview
@@ -265,7 +240,7 @@ function ClashofclawsPage() {
           </p>
         </div>
         <div className=" mb-[200px] " >
-          <Image src={'/images/big4kclaw.png'} alt={'image-1'} width={1000} height={1000} className="object-cover w-full h-full" />
+          <Image src={'/images/plushup/review.png'} alt={'image-1'} width={1000} height={1000} className="object-cover w-full h-full" />
         </div>
 
       </motion.div>
@@ -280,7 +255,7 @@ function ClashofclawsPage() {
           <div  className="w-full transition-transform duration-200 transform hover:scale-[1.02] cursor-none"
               onMouseEnter={projectEnter}
               onMouseLeave={projectLeave}>
-                  <a  href="/works/tencentcloud"  className="cursor-none w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
+                  <a  href="/works/atetauto"  className="cursor-none w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
                       <p className=" absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
                           {`->`}
                       </p>

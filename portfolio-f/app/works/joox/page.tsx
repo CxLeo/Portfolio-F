@@ -12,6 +12,7 @@ import Image from "next/image";
 import ImageHeaderComponent from "@/components/globalcomponents/ImageHeaderComponent";
 import useMouse from "@react-hook/mouse-position";
 import BackButton from "@/components/BackButton";
+import Line from "@/components/globalcomponents/Line";
 
 const briefData: BriefProps = {
   summary:
@@ -32,7 +33,7 @@ const introData: IntroProps = {
   project: "JOOX",
   title: "A music streaming service",
   img: "/images/joox/logo.png",
-  description: "JOOX is a music streaming service owned by Tencent, launched in January 2015. JOOX is the biggest music streaming app in Asian markets such as Hong Kong, Indonesia, Malaysia, Myanmar and Thailand.",
+  description: "JOOX is a music streaming service owned by Tencent, launched in January 2015. It is the biggest music streaming app in Asian markets such as Hong Kong, Indonesia, Malaysia, Myanmar and Thailand.",
 };
 
 function JooxPage
@@ -122,8 +123,8 @@ function JooxPage
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2 mt-[200px]"
       >
-        <div className="mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className=" flex flex-col lg:flex-row  gap-y-[40px]">
+        <Line/>
+        <div className="mt-[20px] flex flex-col lg:flex-row  gap-y-[40px]">
             <h2 className="flex-1 lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] font-dmsans ">
               Background
             </h2>
@@ -143,8 +144,8 @@ function JooxPage
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className=" layout-2 lg:mt-[400px] mt-[200px]"
       >
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <h2 className="flex-1 lg:text-[48px] lg:leading-[48px] text-[32px] leading-[40px] font-dmsans mb-[54px] lg:mb-[100px]">Problem</h2>
+        <Line/>
+        <h2 className="mt-[10px] flex-1 lg:text-[48px] lg:leading-[48px] text-[32px] leading-[40px] font-dmsans mb-[54px] lg:mb-[100px]">Problem</h2>
         <Image src="/images/joox/problem.png" alt="JOOX" width={1312} height={738} className="w-full"/>
       </motion.div>
 
@@ -154,10 +155,10 @@ function JooxPage
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
-        className=" layout-2 mt-[200px]"
+        className=" layout-2 lg:mt-[400px] mt-[260px]"
       >
-        <div className="mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className=" flex flex-col lg:flex-row  gap-y-[40px] mb-[80px]">
+        <Line/>
+        <div className="mt-[20px]  flex flex-col lg:flex-row  gap-y-[40px] mb-[80px]">
             <h2 className="flex-1 lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] font-dmsans ">
               UI Design
             </h2>
@@ -168,52 +169,52 @@ function JooxPage
 
         <div className="w-full lg:mb-[160px] mb-[106px]">
           <Image src="/images/joox/ui1.png" alt="JOOX" width={1312} height={738} className="rounded-[20px] w-full mb-[40px]"/>
-          <div className="mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-          <div className="flex flex-col lg:flex-row gap-y-[44px]">
+          <Line/>
+          <div className="mt-[20px] flex flex-col lg:flex-row gap-y-[44px]">
             <h6 className="flex-1 font-dmsans text-[18px] leading-[22px] lg:text-[24px] lg:leading-[30px] font-[450]">
               {`"My" Page`}
             </h6>
-            <p className="flex-1 text-[16px] leading-[21px] text-[#979797]">
-              <span className="text-black">The two most significant changes to the &quot;My&quot; page are the user info card and the asset accumulation area.</span> <br/><br/> The <span className="text-black">design goal</span> for the user info card is to enhance <span className="text-black">transparency and usability</span>. We rearranged the original information, ensuring that elements are no longer crowded together. Each element block is clearly defined, with appropriate white space between areas, creating a stronger sense of space and clear hierarchy throughout the card.
+            <p className="flex-1 text-[16px] leading-[21px]">
+              The two most significant changes to the &quot;My&quot; page are the user info card and the asset accumulation area. <br/><br/> <span className="text-[#979797]">The</span> design goal <span className="text-[#979797]">for the user info card is to enhance</span> transparency and usability<span className="text-[#979797]">. We rearranged the original information, ensuring that elements are no longer crowded together. Each element block is clearly defined, with appropriate white space between areas, creating a stronger sense of space and clear hierarchy throughout the card.</span>
             </p>
           </div>
         </div>
 
         <div className="w-full lg:mb-[160px] mb-[106px]">
           <Image src="/images/joox/ui2.png" alt="JOOX" width={1312} height={738} className="rounded-[20px] w-full mb-[40px]"/>
-          <div className="mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-          <div className="flex flex-col lg:flex-row gap-y-[44px]">
+          <Line/>
+          <div className="mt-[20px] flex flex-col lg:flex-row gap-y-[44px]">
             <h6 className="flex-1 font-dmsans text-[18px] leading-[22px] lg:text-[24px] lg:leading-[30px] font-[450]">
               {`User Asset Accumulation Area`}
             </h6>
-            <p className="flex-1 text-[16px] leading-[21px] text-[#979797]">
-            In the user asset accumulation area, the conventional approach is to use icons as entry points. However, this time, we made a bold attempt by using a transparent magical color gradient combined with album cover art, creating a visual effect resembling a vinyl record wrapped in translucent tracing paper. Additionally, we added quick play and pause actions to streamline the user&apos;s music listening experience, <span className="text-black">shortening the core path to playing songs</span>.
+            <p className="flex-1 text-[16px] leading-[21px] ">
+            <span className="text-[#979797]">In the user asset accumulation area, the conventional approach is to use icons as entry points. However, this time, we made a bold attempt by using a transparent magical color gradient combined with album cover art, creating a visual effect resembling a vinyl record wrapped in translucent tracing paper. Additionally, we added quick play and pause actions to streamline the user&apos;s music listening experience,</span> shortening the core path to playing songs.
             </p>
           </div>
         </div>
 
         <div className="w-full lg:mb-[160px] mb-[106px]">
           <Image src="/images/joox/ui3.png" alt="JOOX" width={1312} height={738} className="rounded-[20px] w-full mb-[40px]"/>
-          <div className="mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-          <div className="flex flex-col lg:flex-row gap-y-[44px]">
+          <Line/>
+          <div className="mt-[20px] flex flex-col lg:flex-row gap-y-[44px]">
             <h6 className="flex-1 font-dmsans text-[18px] leading-[22px] lg:text-[24px] lg:leading-[30px] font-[450]">
               {`Icon Update`}
             </h6>
             <div className="flex-1 text-[16px] leading-[21px] text-[#979797] whitespace-pre-line">
             Icons serve as a graphical language alongside text. In this update, we made several enhancements to the icons:<br/><br/>
-            <ul className="list-disc list-outSide text-black ml-5">
-              <li>Shape: <span className="text-[#979797]">We optimized unclear symbols and made the overall icon shapes lighter and more rounded.</span></li>
-              <li>Color: <span className="text-[#979797]">The original dark green highlight of the UI was adjusted to a more youthful and dynamic fluorescent green.</span></li>
-              <li>Texture: <span className="text-[#979797]">We broke away from the flat, single-texture design by introducing a dual-color scheme with fluorescent green and gray. This includes a transparent, semi-gradient effect, and for the bottom tab, we added subtle gradient textures and shadows. This gives the icons a richer, more three-dimensional appearance with more details and highlights.</span></li>
+            <ul className="list-disc list-outSide text-[#979797] ml-5">
+              <li>Shape: We optimized unclear symbols and made the overall icon shapes lighter and more rounded.</li>
+              <li>Color: The original dark green highlight of the UI was adjusted to a more youthful and dynamic fluorescent green.</li>
+              <li>Texture: We broke away from the flat, single-texture design by introducing a dual-color scheme with fluorescent green and gray. This includes a transparent, semi-gradient effect, and for the bottom tab, we added subtle gradient textures and shadows. This gives the icons a richer, more three-dimensional appearance with more details and highlights.</li>
             </ul>
             </div>
           </div>
         </div>
 
         <div className="w-full lg:mb-[160px] mb-[106px]">
-          <Image src="/images/joox/ui2.png" alt="JOOX" width={1312} height={738} className="rounded-[20px] w-full mb-[40px]"/>
-          <div className="mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-          <div className="flex flex-col lg:flex-row gap-y-[44px]">
+          <Image src="/images/joox/ui4.png" alt="JOOX" width={1312} height={738} className="rounded-[20px] w-full mb-[40px]"/>
+          <Line/>
+          <div className="mt-[20px] flex flex-col lg:flex-row gap-y-[44px]">
             <h6 className="flex-1 font-dmsans text-[18px] leading-[22px] lg:text-[24px] lg:leading-[30px] font-[450]">
               {`Icon Update - Actionsheet page`}
             </h6>
@@ -224,9 +225,9 @@ function JooxPage
         </div>
 
         <div className="w-full lg:mb-[160px] mb-[106px]">
-          <Image src="/images/joox/ui2.png" alt="JOOX" width={1312} height={738} className="rounded-[20px] w-full mb-[40px]"/>
-          <div className="mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-          <div className="flex flex-col lg:flex-row gap-y-[44px]">
+          <Image src="/images/joox/ui5.png" alt="JOOX" width={1312} height={738} className="rounded-[20px] w-full mb-[40px]"/>
+          <Line/>
+          <div className="mt-[20px] flex flex-col lg:flex-row gap-y-[44px]">
             <h6 className="flex-1 font-dmsans text-[18px] leading-[22px] lg:text-[24px] lg:leading-[30px] font-[450]">
               {`Icon Update - Playback page`}
             </h6>
@@ -243,10 +244,10 @@ function JooxPage
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
-        className=" layout-2 mt-[200px]"
+        className=" layout-2 mt-[260px] lg:mt-[400px]"
       >
-        <div className="mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className=" flex flex-col lg:flex-row  gap-y-[40px] mb-[80px]">
+        <Line/>
+        <div className="mt-[20px]  flex flex-col lg:flex-row  gap-y-[40px] mb-[80px]">
             <h2 className="flex-1 lg:text-[48px] lg:leading-[60px] text-[32px] leading-[40px] font-dmsans ">
             Playback Page
             </h2>
@@ -257,15 +258,15 @@ function JooxPage
 
         <div className="w-full lg:mb-[160px] mb-[106px]">
           <Image src="/images/joox/play1.png" alt="JOOX" width={1312} height={738} className="rounded-[20px] w-full mb-[40px]"/>
-          <div className="mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-          <div className="flex flex-col lg:flex-row gap-y-[44px]">
+          <Line/>
+          <div className="mt-[20px] flex flex-col lg:flex-row gap-y-[44px]">
             <h6 className="flex-1 font-dmsans text-[18px] leading-[22px] lg:text-[24px] lg:leading-[24px] font-[450]">
               {`Seeing the Colors of Music – Colorful Gradients`}
             </h6>
             <div className="flex-1 text-[16px] leading-[21px] text-[#979797] whitespace-pre-line">
-            The album cover is a visual expression of the musician&apos;s work, creating a sensory connection between the cover and the song. <span className="text-black">We dynamically upgraded the magic color of the playback page background, giving the music more layers and meaning.</span><br/>The rich and smooth gradient colors can create an atmosphere and convey emotions.
+            The album cover is a visual expression of the musician&apos;s work, creating a sensory connection between the cover and the song. We dynamically upgraded the magic color of the playback page background, giving the music more layers and meaning.<br/>The rich and smooth gradient colors can create an atmosphere and convey emotions.
             The colorful gradient light effects are composed of a two-layer structure to ensure a clear and vibrant color hierarchy:<br/><br/>
-            <ul className="list-disc list-outSide text-black ml-5">
+            <ul className="list-disc list-outSide text-[#979797] ml-5">
               <li>Upper Layer: All control information is in bright magic colors.</li>
               <li>Bottom Layer: Dynamic colorful gradient effects.</li>
             </ul>
@@ -275,8 +276,8 @@ function JooxPage
 
         <div className="w-full lg:mb-[160px] mb-[106px]">
           <Image src="/images/joox/play2.png" alt="JOOX" width={1312} height={738} className="rounded-[20px] w-full mb-[40px]"/>
-          <div className="mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-          <div className="flex flex-col lg:flex-row gap-y-[44px]">
+          <Line/>
+          <div className="mt-[20px] flex flex-col lg:flex-row gap-y-[44px]">
             <h6 className="flex-1 font-dmsans text-[18px] leading-[22px] lg:text-[24px] lg:leading-[24px] font-[450]">
               {`Minibar`}
             </h6>
@@ -288,8 +289,8 @@ function JooxPage
 
         <div className="w-full lg:mb-[160px] mb-[106px]">
           <Image src="/images/joox/play3.png" alt="JOOX" width={1312} height={738} className="rounded-[20px] w-full mb-[40px]"/>
-          <div className="mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-          <div className="flex flex-col lg:flex-row gap-y-[44px]">
+          <Line/>
+          <div className="mt-[20px] flex flex-col lg:flex-row gap-y-[44px]">
             <h6 className="flex-1 font-dmsans text-[18px] leading-[22px] lg:text-[24px] lg:leading-[24px] font-[450]">
               {`Seeing the Rhythm of Music`}
             </h6>
@@ -310,7 +311,7 @@ function JooxPage
         <div  className="w-full transition-transform duration-200 transform hover:scale-[1.02] cursor-none"
             onMouseEnter={projectEnter}
             onMouseLeave={projectLeave}>
-                <a  href="/works/tencentcloud"  className="cursor-none w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
+                <a  href="/works/clashofclaws"  className="cursor-none w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
                     <p className=" absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
                         {`->`}
                     </p>

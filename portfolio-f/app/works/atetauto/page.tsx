@@ -13,6 +13,7 @@ import Image from "next/image";
 import { useEffect, useRef } from 'react';
 import useMouse from "@react-hook/mouse-position";
 import BackButton from "@/components/BackButton";
+import Line from "@/components/globalcomponents/Line";
 
 const briefData: BriefProps = {
   summary:
@@ -148,8 +149,8 @@ function AtetAutoPage() {
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className="layout-2 mt-[100px]"
       >
-        <div className="mb-[10px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className="flex flex-col lg:flex-row gap-y-[64px]">
+        <Line/>
+        <div className="mt-[20px] flex flex-col lg:flex-row gap-y-[64px]">
           <h3 className="flex-1 font-dmsans font-[450] text-[38px] leading-[40px] lg:text-[48px] lg:leading-[48px]">Challenge</h3>
           <p className="flex-1 text-[16px] leading-[21px]">{`ATET AUTO (WM Motor Technology) is an emerging leader in the electric vehicle industry. With a focus on North America, ATET AUTO required a new digital experience to reflect its innovative approach and commitment to sustainable mobility. We worked with ATET AUTO to create a modern, forward-thinking website that showcases their leadership in the EV industry and highlights the cutting-edge products they offer.`}</p>
         </div>
@@ -177,8 +178,8 @@ function AtetAutoPage() {
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className="layout-2 mt-[90px] lg:mt-[138px]"
       >
-        <div className="lg:mb-[34px] mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className="flex flex-col lg:flex-row gap-y-[64px]">
+        <Line/>
+        <div className="mt-[20px] flex flex-col lg:flex-row gap-y-[64px]">
           <h3 className="flex-1 font-dmsans font-[450] text-[38px] leading-[40px] lg:text-[48px] lg:leading-[48px] ml-[4.5%]">
             Repositioning a <br/> Global Brand
             </h3>
@@ -206,8 +207,8 @@ function AtetAutoPage() {
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className="layout-2 mt-[100px]"
       >
-        <div className="lg:mb-[34px] mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className="flex flex-col lg:flex-row gap-y-[64px]">
+        <Line/>
+        <div className="flex flex-col lg:flex-row gap-y-[64px] mt-[20px]">
           <h3 className="flex-1 font-dmsans font-[450] text-[38px] leading-[40px] lg:text-[48px] lg:leading-[48px]">Building a Brand Through UX</h3>
           <p className="flex-1 text-[16px] leading-[21px]">{`The majority of ATET AUTO customers begin their purchase journey online. With ATET AUTO's commitment to customer experience, it was crucial to offer a uniquely compelling way to explore and personalize their products. Leveraging our design thinking process, dmsolving collaborated with ATET AUTO stakeholders to ideate and define detailed customer journeys, leading to the creation of a refined experience optimized for conversion.`}</p>
         </div>
@@ -223,8 +224,8 @@ function AtetAutoPage() {
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className="layout-2 mt-[100px] lg:mt-[330px]"
       >
-        <div className="lg:mb-[34px] mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <h3 className="font-dmsans font-[450] text-[32px] leading-[40px] lg:text-[64px] lg:leading-[64px]">Atet Auto Website</h3>
+        <Line/>
+        <h3 className="font-dmsans font-[450] text-[32px] leading-[40px] lg:text-[64px] lg:leading-[64px] mt-[20px]">Atet Auto Website</h3>
           <div className="mt-[100px] lg:mt-[213px] hidden lg:block">
             <Image alt="Atet Auto" width={1296} height={1640} src="/images/atetauto/sec4.png" className="w-full "/>
             <Image alt="Atet Auto" width={1307} height={1660} src="/images/atetauto/sec5.png" className="w-full mt-[18px] lg:mt-[54px]"/>
@@ -243,8 +244,8 @@ function AtetAutoPage() {
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         className="layout-2 mt-[71px] lg:mt-[210px]"
       >
-        <div className="lg:mb-[34px] mb-[20px] w-full  h-0 border-[1px] border-[#D9D9D9]"></div>
-        <div className="flex flex-col lg:flex-row gap-y-[64px]">
+        <Line/>
+        <div className="flex flex-col lg:flex-row gap-y-[64px] mt-[20px]">
           <h3 className="flex-1 font-dmsans font-[450] text-[38px] leading-[40px] lg:text-[48px] lg:leading-[48px] ">Client Success</h3>
           <p className="flex-1 text-[16px] leading-[21px]">{`The new Atet Auto site has proven to be an intuitive, high-performing, and optimized web experience that "showcases the bold new direction to a new generation of Atet Auto enthusiasts" (Atet Auto Digital Marketing). Since the launch of the new site, Atet Auto has seen a significant impact on brand equity, customer engagement, and lead capture.`}</p>
         </div>
