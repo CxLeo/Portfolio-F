@@ -3,18 +3,28 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/utilities/utilities";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const Path = (props: any) => {
+  const [themeState,setThemeState] = useState("light");
 
-  const { theme } = useTheme();
+  useEffect(() => {
+    if (localStorage.getItem('themes')===null){
+      localStorage.setItem('themes','light');
+    }
+    const themeLocal = localStorage.getItem('themes');
+    if (themeLocal) {
+      setThemeState(themeLocal);
+    }
+  });
+  
   return (
     <motion.path
 
       strokeWidth="2"
       // stroke={'gray'}
-      stroke={cn(localStorage.getItem('themes')==='light' ? 'black' : 'white'
-        // 'black', theme ==='dark' && 'white', theme === 'system' && 'dark')
-      )}
+      // stroke={cn( localStorage.getItem('themes')==='light' ? 'black' : 'white')}
+      stroke={cn( themeState==='light' ? 'black' : 'white')}
       strokeLinecap="round"
       {...props}
     />
