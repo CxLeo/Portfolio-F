@@ -1,3 +1,3 @@
 # Portfolio-F
 
-Portfolio Website for Frank Zhang - UI/UX Designer
+Hi, it's a portfolio website
