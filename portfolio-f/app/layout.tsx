@@ -23,11 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body className={`${inter.className}  h-fit`}>
-        <ThemeProvider
-          // attribute="class"
+        <ThemeProvider 
+          storageKey="themes"
           defaultTheme="light"
-          enableSystem={false}
-          // disableTransitionOnChange
+          // enableSystem={false}
+          themes={['light','dark']} 
 
         >
           <NavBar /> 
