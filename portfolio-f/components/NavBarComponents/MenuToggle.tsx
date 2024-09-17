@@ -5,16 +5,14 @@ import { cn } from "@/utilities/utilities";
 import { useTheme } from "next-themes";
 
 const Path = (props: any) => {
-  console.log(props);
 
   const { theme } = useTheme();
-console.log('Theme Path =<',theme)
   return (
     <motion.path
 
       strokeWidth="2"
       // stroke={'gray'}
-      stroke={cn(theme === 'system' ? 'black' : theme === 'dark' ? 'white' : 'black'
+      stroke={cn(localStorage.getItem('themes')==='light' ? 'black' : 'white'
         // 'black', theme ==='dark' && 'white', theme === 'system' && 'dark')
       )}
       strokeLinecap="round"
