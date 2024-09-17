@@ -268,7 +268,7 @@ function AtetAutoPage() {
           <div  className="w-full transition-transform duration-200 transform hover:scale-[1.02] cursor-none"
               onMouseEnter={projectEnter}
               onMouseLeave={projectLeave}>
-                  <a  href="/works/tencentcloud"  className="cursor-none w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
+                  <a  href="/works/noqclinic"  className="cursor-none w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
                       <p className=" absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
                           {`->`}
                       </p>
