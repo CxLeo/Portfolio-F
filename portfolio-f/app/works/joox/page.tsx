@@ -288,7 +288,11 @@ function JooxPage
         </div>
 
         <div className="w-full lg:mb-[160px] mb-[106px]">
-          <Image src="/images/joox/play3.png" alt="JOOX" width={1312} height={738} className="rounded-[20px] w-full mb-[40px]"/>
+          {/* <Image src="/images/joox/play3.png" alt="JOOX" width={1312} height={738} className="rounded-[20px] w-full mb-[40px]"/> */}
+          <video width={1312} height={738} loop preload="auto" playsInline autoPlay className="rounded-[20px] w-full mb-[40px]">
+            <source src={'/files/joox.mp4'} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <Line/>
           <div className="mt-[20px] flex flex-col lg:flex-row gap-y-[44px]">
             <h6 className="flex-1 font-dmsans text-[18px] leading-[22px] lg:text-[24px] lg:leading-[24px] font-[450]">

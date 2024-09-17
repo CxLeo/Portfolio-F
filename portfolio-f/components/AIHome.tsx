@@ -439,13 +439,21 @@ function AIHome() {
                             <Image  src="/images/ai-home/profileB.png" alt="profile" width={632} height={840} className="lg:w-[85%] w-full rounded-[20px]"/>
                         </div>
                     <div className="flex-1">
-                        <div className="lg:mt-[480px] mt-[40px] flex">
+                        <div className="lg:mt-[49%] mt-[40px] flex">
                             <p className="text-[20px] leading-[20px] mr-2">.about</p>
                             <Line/>
                         </div>
                         <p className="mt-[40px] font-dmsans font-[450] lg:text-[34px] lg:leading-[47px] text-[24px] leading-[36px]">
                         I&apos;m a multi-disciplinary product designer with over 3 years of experience, currently based in Toronto,  Canada. I&apos;m passionate about design, with extensive experience across UI, UX, and Branding. My philosophy is simple: <span className="text-[#00C7A8]">&quot;The less it is, the cooler the interface.&quot;</span>
                         </p>
+
+                        <motion.a download="FrankZhangCV.pdf" href="/files/frank-resume.pdf"  className="rounded-full mt-[80px] pt-[19px] pl-[20px] w-[198px] h-[59px] bg-[#00C7A8] hover:bg-[#05E3C0] hover:shadow-[0_0_20px_5px_#00E7C34D] flex gap-x-[8px]">
+                        <svg width="12" height="14" viewBox="0 0 12 14" fill="none" className="mt-[5px]">
+                            <rect y="13" width="12" height="1" fill="black"/>
+                            <path d="M3.5 5V0H8.5V5H12L6 11L0 5H3.5Z" fill="black"/>
+                        </svg>
+                        <p className="text-[22px] leading-[22px]">Download CV</p>
+                        </motion.a>
                     </div>
                     </div>
 

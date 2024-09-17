@@ -14,6 +14,7 @@ import { useEffect, useRef } from 'react';
 import useMouse from "@react-hook/mouse-position";
 import BackButton from "@/components/BackButton";
 import Line from "@/components/globalcomponents/Line";
+import AtetSwiper from "@/components/AtetSwiperComponents/AtetSwiper";
 
 const briefData: BriefProps = {
   summary:
@@ -214,7 +215,13 @@ function AtetAutoPage() {
         </div>
         <Image alt="Atet Auto" width={380} height={215} src="/images/atetauto/sec3Mobile.png" className="mt-[45px] lg:mt-[180px] w-full lg:hidden block"/>
         <Image alt="Atet Auto" width={1334} height={761} src="/images/atetauto/sec3.png" className="mt-[45px] lg:mt-[180px] w-full hidden lg:block"/>
+        
       </motion.div>
+      
+      {/* <div className="lg:mt-[300px] mt-[100px] w-[88%] mx-auto">
+      <AtetSwiper data={["/files/A.mp4","/files/B.mp4","/files/C.mp4"]}/>
+      </div> */}
+      
 
       {/* Website Section */}
       <motion.div
