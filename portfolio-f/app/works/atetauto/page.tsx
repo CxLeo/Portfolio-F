@@ -213,14 +213,15 @@ function AtetAutoPage() {
           <h3 className="flex-1 font-dmsans font-[450] text-[38px] leading-[40px] lg:text-[48px] lg:leading-[48px]">Building a Brand Through UX</h3>
           <p className="flex-1 text-[16px] leading-[21px]">{`The majority of ATET AUTO customers begin their purchase journey online. With ATET AUTO's commitment to customer experience, it was crucial to offer a uniquely compelling way to explore and personalize their products. Leveraging our design thinking process, dmsolving collaborated with ATET AUTO stakeholders to ideate and define detailed customer journeys, leading to the creation of a refined experience optimized for conversion.`}</p>
         </div>
-        <Image alt="Atet Auto" width={380} height={215} src="/images/atetauto/sec3Mobile.png" className="mt-[45px] lg:mt-[180px] w-full lg:hidden block"/>
-        <Image alt="Atet Auto" width={1334} height={761} src="/images/atetauto/sec3.png" className="mt-[45px] lg:mt-[180px] w-full hidden lg:block"/>
+        {/* <Image alt="Atet Auto" width={380} height={215} src="/images/atetauto/sec3Mobile.png" className="mt-[45px] lg:mt-[180px] w-full lg:hidden block"/>
+        <Image alt="Atet Auto" width={1334} height={761} src="/images/atetauto/sec3.png" className="mt-[45px] lg:mt-[180px] w-full hidden lg:block"/> */}
         
       </motion.div>
       
-      {/* <div className="lg:mt-[300px] mt-[100px] w-[88%] mx-auto">
-      <AtetSwiper data={["/files/A.mp4","/files/B.mp4","/files/C.mp4"]}/>
-      </div> */}
+      <div className="lg:mt-[300px] mt-[100px] w-[88%] mx-auto">
+      <AtetSwiper data={["/files/a1.mp4","/files/a2.mp4","/files/a3.mp4"]}/>
+      <p className="mt-[83px] text-[16px] text-[#747474] leading-[21.6px] text-center">USER INTERFACE CONCEPTS EXPLORED WITH INTERACTION DESIGN</p>
+      </div>
       
 
       {/* Website Section */}
