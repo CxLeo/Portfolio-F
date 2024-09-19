@@ -27,11 +27,11 @@ function AIHome() {
             url:"works/joox"
         },
         {
-            name:"Clash of The Claws",
+            name:"Plush Up",
             slung:"VR game website",
             imgLong:"/images/ai-home/claw.png",
             imgSquare:"/images/ai-home/clawSquare.png",
-            url:"works/clashofclaws"
+            url:"works/plushup"
         },
         {
             name:"Atet Auto",
