@@ -315,7 +315,7 @@ function JooxPage
         <div  className="w-full transition-transform duration-200 transform hover:scale-[1.02] cursor-none"
             onMouseEnter={projectEnter}
             onMouseLeave={projectLeave}>
-                <a  href="/works/clashofclaws"  className="cursor-none w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
+                <a  href="/works/plushup"  className="cursor-none w-full h-full transition duration-500 transform opacity-0 translate-x-0 lg:hover:opacity-100 ease-smooth-in-out  hover:translate-x-5  z-10 bg-transparent absolute">
                     <p className=" absolute flex items-center justify-center right-[48px] top-[28px] w-[66px] h-[66px] rounded-full bg-[#00C7A8]">
                         {`->`}
                     </p>
@@ -338,7 +338,7 @@ function JooxPage
                 className="w-full block lg:hidden"
             />
           </div>
-          <h6 className="font-dmsans font-medium text-[16px] leading-[16px] mt-[13px]">Clash of The Claws</h6>
+          <h6 className="font-dmsans font-medium text-[16px] leading-[16px] mt-[13px]">Plush Up</h6>
           <p className="font-dmsans text-[16px] text-[#898989] leading-[16px] mt-[5px]">VR game website</p> 
         </div>        
       </motion.div>

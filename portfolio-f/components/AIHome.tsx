@@ -452,7 +452,7 @@ function AIHome() {
                             <rect y="13" width="12" height="1" fill="black"/>
                             <path d="M3.5 5V0H8.5V5H12L6 11L0 5H3.5Z" fill="black"/>
                         </svg>
-                        <p className="text-[22px] leading-[22px]">Download CV</p>
+                        <p className="text-[22px] leading-[22px] text-[#000001]">Download CV</p>
                         </motion.a>
                     </div>
                     </div>
